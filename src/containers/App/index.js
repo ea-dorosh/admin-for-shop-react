@@ -1,12 +1,14 @@
 import React from "react";
-import Header from "../Header"
 import "./index.css"
+import Header from "../../components/Dashboard/Header"
+import Navigation from "../../components/Dashboard/Navigation";
 
 
 function App() {
     return (
         <div className={'app-wrapper'}>
             <Header/>
+            <Navigation/>
         </div>
     );
 }

@@ -1,6 +1,6 @@
 import React from "react";
-import Account from "../Account";
-import Logo from "../Logo"
+import Account from "./Account";
+import Logo from "./Logo"
 import "./index.css"
 
 
