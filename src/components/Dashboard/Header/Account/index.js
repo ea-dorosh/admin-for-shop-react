@@ -5,7 +5,7 @@ function Account() {
     return (
         <div className={'account'}>
             <div className={'account__img-wrapper'}></div>
-            <span className={'account__name'}>Eric</span>
+            <span className={'account__name'}>User Name</span>
         </div>
     );
 }
