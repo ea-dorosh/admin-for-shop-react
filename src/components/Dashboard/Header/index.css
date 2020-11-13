@@ -1,5 +1,7 @@
 .header {
     display: flex;
+    grid-column: 1/-1;
+    grid-row: 1/1;
     padding: 25px 30px 20px;
     background: #FFFFFF;
     border-bottom: 2px solid #EEEEEE;
