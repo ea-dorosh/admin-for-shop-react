@@ -1,18 +1,12 @@
 import React from "react";
-
 import "./index.css"
+import NavigationList from "./NavigationList";
 
 
 function Navigation() {
     return (
         <div className={'navigation'}>
-            <ul className={'navigation-list'}>
-                <li className={'navigation-list__item navigation-list__item--active'}>Dashboard</li>
-                <li className={'navigation-list__item'}>Orders</li>
-                <li className={'navigation-list__item'}>Products</li>
-                <li className={'navigation-list__item'}>Customers</li>
-                <li className={'navigation-list__item'}>Reports</li>
-            </ul>
+            <NavigationList/>
         </div>
     );
 }

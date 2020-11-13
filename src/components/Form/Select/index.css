@@ -1,0 +1,56 @@
+.select {
+    width: 282px;
+}
+
+.select__label {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 14px;
+    line-height: 22px;
+    color: #333333;
+}
+
+.select__item {
+    padding: 12px 15px 11px 15px;
+    width: 282px;
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 16px;
+    color: #333333;
+    background-color: #FFFFFF;
+    border: 1px solid #EBEBEB;
+    cursor: pointer;
+}
+
+.select__list {
+    display: none;
+    margin-bottom: 3px;
+    font-size: 14px;
+    line-height: 22px;
+    color: #333333;
+    border: 1px solid #EBEBEB;
+    border-top: none;
+}
+
+.select__list.open {
+    display: block;
+}
+
+.select__list-item {
+    padding: 9px 15px 8px 15px;
+    width: 282px;
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 16px;
+    color: #333333;
+    background-color: #FFFFFF;
+}
+
+.select__list-item:hover {
+    background-color: #EEEEEE;
+}
+
+
+
+
+
