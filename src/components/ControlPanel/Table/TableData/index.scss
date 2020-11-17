@@ -1,0 +1,22 @@
+.table__data {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #333333;
+  border-bottom: 1px solid #DDDDDD;
+  padding-top: 25px;
+  padding-bottom: 22px;
+
+  &:first-child {
+    padding-left: 40px;
+  }
+}
+
+.daily-sales .table__data {
+
+  &:first-child {
+    font-weight: bold;
+  }
+}
+

@@ -1,0 +1,13 @@
+.table__head {
+  text-align: left;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 22px;
+  color: #555555;
+  border-bottom: 1px solid #DDDDDD;
+
+  &:first-child {
+    padding-left: 40px;
+  }
+}
