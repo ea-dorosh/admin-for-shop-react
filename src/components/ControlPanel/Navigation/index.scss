@@ -1,14 +1,13 @@
 .navigation {
-    position: relative;
-    grid-column: 1/1;
-    grid-row: 2/2;
-    padding-left: 30px;
-    padding-right: 10px;
-    width: 228px;
-    border-right: 2px solid #EEEEEE;
-}
+  position: relative;
+  grid-column: 1/1;
+  grid-row: 2/2;
+  padding-left: 30px;
+  padding-right: 10px;
+  width: 228px;
+  border-right: 2px solid #EEEEEE;
 
-.navigation::before {
+  &::before {
     content: '';
     position: absolute;
     width: 2px;
@@ -16,4 +15,5 @@
     top: -100px;
     right: -2px;
     background-color: #EEEEEE;
+  }
 }
