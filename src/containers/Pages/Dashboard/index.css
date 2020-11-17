@@ -1,0 +1,19 @@
+.dashboard-page__top-wrapper {
+    padding: 40px;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-page__top-title {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #333333;
+}
+
+.dashboard-page__sales {
+    display: flex;
+    margin-top: 25px;
+}
