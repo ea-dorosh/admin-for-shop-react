@@ -1,0 +1,23 @@
+.input-label {
+  max-width: 100%;
+  margin-bottom: 3px;
+  font-size: 14px;
+  line-height: 22px;
+  color: #333333;
+}
+
+.input-text {
+  display: block;
+  padding: 12px 15px 11px 15px;
+  width: 282px;
+  max-width: 100%;
+  font-size: 14px;
+  line-height: 16px;
+  color: #333333;
+  border: 1px solid #EBEBEB;
+
+  &:focus {
+    outline: none;
+    border: 1px solid #000000;
+  }
+}

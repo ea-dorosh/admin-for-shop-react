@@ -1,0 +1,20 @@
+.navigation-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  margin-bottom: -15px;
+}
+
+.navigation-list__item {
+  margin-bottom: 15px;
+  padding-left: 28px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+  color: #333333;
+
+  &--active {
+    color: #2771FF;
+  }
+}
+

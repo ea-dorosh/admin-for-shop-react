@@ -1,5 +1,5 @@
 import React from "react";
-import "./index.css"
+import "./index.scss"
 import Header from "../../../components/ControlPanel/Header";
 import Navigation from "../../../components/ControlPanel/Navigation";
 import Page from "../../../components/ControlPanel/Page";
@@ -26,7 +26,7 @@ function Dashboard() {
                             amount={'135.21'}
                         />
                         <SalesWidget
-                            name={'AVS1'}
+                            name={'AVS2'}
                             amount={'735.21'}
                         />
                     </div>

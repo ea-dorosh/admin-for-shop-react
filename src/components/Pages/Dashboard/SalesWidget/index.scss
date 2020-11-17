@@ -1,0 +1,36 @@
+.sales-widget {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 30px;
+  padding: 10px 10px 15px 10px;
+  width: 160px;
+  background: #E6E6E6;
+  color: #333333;
+  border-radius: 5px;
+
+  &--total {
+    background: linear-gradient(267.88deg, #358F6E 0.99%, #7FBF72 99.77%);
+    color: #FFFFFF;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.sales-widget__company-name {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+
+}
+
+.sales-widget__company-amount {
+  margin-top: 5px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 21px;
+}

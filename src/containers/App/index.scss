@@ -1,0 +1,7 @@
+.app-wrapper {
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  grid-template-columns: 228px 1fr;
+  min-height: 100vh;
+  background: #FAFAFA;
+}
