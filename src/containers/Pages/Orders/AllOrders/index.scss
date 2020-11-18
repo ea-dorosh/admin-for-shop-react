@@ -1,0 +1,44 @@
+.dashboard-page__top-wrapper {
+    padding: 40px;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-page__top-inner {
+    padding: 0 40px;
+    border-bottom: 1px solid #D6D6D6;
+}
+
+.dashboard-page__wrapper {
+    padding: 30px 0 40px 0;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-page__top-title {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #333333;
+}
+
+.dashboard-page__sales {
+    display: flex;
+    margin-top: 25px;
+}
+
+.dashboard-page__bottom-wrapper {
+    margin-top: 30px;
+    padding: 40px 0;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-page__filter-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: -20px;
+    padding: 16px 40px 24px 40px;
+}

@@ -11,10 +11,19 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 22px;
+}
+
+.navigation-list__item-link {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
   color: #333333;
+  text-decoration: none;
 
   &--active {
     color: #2771FF;
   }
 }
+
+
 
