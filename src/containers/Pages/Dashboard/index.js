@@ -1,4 +1,5 @@
 import React from "react";
+import {useSelector} from "react-redux"
 import "./index.scss"
 import Header from "../../../components/ControlPanel/Header";
 import Navigation from "../../../components/ControlPanel/Navigation";
@@ -12,6 +13,18 @@ import TableRow from "../../../components/ControlPanel/Table/TableRow";
 
 function Dashboard() {
 
+  const shops = useSelector(state => state.shops.shops);
+
+  const calculateTotal = function () {
+    let totalAmount = 0;
+
+    shops.forEach(function (shop) {
+      totalAmount = shop.dailySales[0].amount + totalAmount
+    });
+
+    return totalAmount
+  };
+
   return (
       <>
         <Header/>
@@ -22,20 +35,19 @@ function Dashboard() {
             <div className='dashboard-page__sales'>
               <SalesWidget
                   total
-                  amount={'1315.21'}
+                  amount={calculateTotal()}
               />
-              <SalesWidget
-                  name={'AVS1'}
-                  amount={'135.21'}
-              />
-              <SalesWidget
-                  name={'AVS2'}
-                  amount={'735.21'}
-              />
+              {shops.map((shop, index) => (
+                  <SalesWidget
+                      name={shop.name}
+                      amount={shop.dailySales[0].amount}
+                      key={index}
+                  />
+              ))}
             </div>
           </div>
           <div className='dashboard-page__bottom-wrapper'>
-            <Table tableType={'daily-sales'}>
+            <Table tableType={'shops'}>
               <thead>
               <TableRow>
                 <TableHead>Point Name</TableHead>
@@ -46,13 +58,15 @@ function Dashboard() {
               </TableRow>
               </thead>
               <tbody>
-              <TableRow>
-                <TableData>AVS1</TableData>
-                <TableData>Shop</TableData>
-                <TableData>Austin</TableData>
-                <TableData>720-815-5550</TableData>
-                <TableData>872</TableData>
-              </TableRow>
+              {shops.map((shop, index) => (
+                  <TableRow key={index}>
+                    <TableData>{shop.name}</TableData>
+                    <TableData>{shop.type}</TableData>
+                    <TableData>{shop.city}</TableData>
+                    <TableData>{shop.tel}</TableData>
+                    <TableData>{shop.inventory}</TableData>
+                  </TableRow>
+              ))}
               </tbody>
             </Table>
           </div>
