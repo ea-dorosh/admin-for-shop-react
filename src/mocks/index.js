@@ -68,3 +68,42 @@ export const shops = [
     ],
   },
 ];
+
+export const orders = [
+  {
+    type: 'online',
+    checkout: '#online_7392',
+    date: 'Feb24 at 02:30am',
+    customer: 'User Name',
+    payment: 'Paid',
+    fulfillment: 'Fulfilled',
+    total: '728.03'
+  },
+  {
+    type: 'online',
+    checkout: '#online_0000',
+    date: 'Feb24 at 02:30am',
+    customer: 'User Name',
+    payment: 'Paid',
+    fulfillment: 'Fulfilled',
+    total: '728.03'
+  },
+  {
+    type: 'online',
+    checkout: '#online_1111',
+    date: 'Feb24 at 02:30am',
+    customer: 'User Name',
+    payment: 'Refunded',
+    fulfillment: 'Fulfilled',
+    total: '728.03'
+  },
+  {
+    type: 'offline',
+    checkout: '#avs_1111',
+    date: 'Feb24 at 02:30am',
+    customer: 'User Name',
+    payment: 'Paid',
+    fulfillment: 'Fulfilled',
+    total: '728.03'
+  },
+];
