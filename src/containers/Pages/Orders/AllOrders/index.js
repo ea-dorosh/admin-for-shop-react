@@ -83,11 +83,11 @@ function AllOrders() {
                 <tbody>
                 {orders.map((order, index) => (
                     <TableRow key={index}>
-                      <TableData>{order.checkout}</TableData>
+                      <TableData checkout={order.checkout}>{order.checkout}</TableData>
                       <TableData>{order.date}</TableData>
                       <TableData>{order.customer}</TableData>
-                      <TableData>{order.payment}</TableData>
-                      <TableData>{order.fulfillment}</TableData>
+                      <TableData payment>{order.payment}</TableData>
+                      <TableData fulfillment={order.fulfillment}>{order.fulfillment.name}</TableData>
                       <TableData>${order.total}</TableData>
                     </TableRow>
                 ))}

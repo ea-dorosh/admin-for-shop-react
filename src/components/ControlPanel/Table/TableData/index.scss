@@ -20,3 +20,64 @@
   }
 }
 
+.payment {
+  position: relative;
+  display: inline-block;
+  padding: 5px 16px 5px 24px;
+  background: #EEEEEE;
+  border-radius: 14px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    left: 10px;
+    top: 8px;
+    background: #555555;
+    border-radius: 21px;
+  }
+}
+
+.fulfillment {
+  position: relative;
+  display: inline-block;
+  padding: 5px 16px 5px 24px;
+  background: transparent;
+  border-radius: 14px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    left: 10px;
+    top: 8px;
+    border-radius: 21px;
+  }
+
+  &--0 {
+    background: #EEEEEE;
+
+    &::before {
+      background: #555555;
+    }
+  }
+
+  &--1 {
+    background: #FBE19D;
+
+    &::before {
+      background: #F9C43C;
+    }
+  }
+
+  &--2 {
+    background: #EEEEEE;
+
+    &::before {
+      background: #555555;
+    }
+  }
+}
+

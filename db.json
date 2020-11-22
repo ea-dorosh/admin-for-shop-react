@@ -77,7 +77,10 @@
       "date": "Feb24 at 02:30am",
       "customer": "User Name",
       "payment": "Paid",
-      "fulfillment": "Fulfilled",
+      "fulfillment": {
+        "id": 0,
+        "name": "Fulfilled"
+      },
       "total": "728.03"
     },
     {
@@ -86,7 +89,10 @@
       "date": "Feb24 at 02:30am",
       "customer": "User Name",
       "payment": "Paid",
-      "fulfillment": "Fulfilled",
+      "fulfillment": {
+        "id": 1,
+        "name": "Unfulfilled"
+      },
       "total": "700.33"
     },
     {
@@ -95,7 +101,10 @@
       "date": "Feb24 at 02:30am",
       "customer": "User Name",
       "payment": "Refunded",
-      "fulfillment": "Fulfilled",
+      "fulfillment": {
+        "id": 2,
+        "name": "Partially fulfilled"
+      },
       "total": "800.03"
     },
     {
@@ -104,7 +113,10 @@
       "date": "Feb24 at 02:30am",
       "customer": "User Name",
       "payment": "Paid",
-      "fulfillment": "Fulfilled",
+      "fulfillment": {
+        "id": 2,
+        "name": "Partially fulfilled"
+      },
       "total": "728.03"
     },
     {
@@ -113,7 +125,10 @@
       "date": "Feb24 at 02:30am",
       "customer": "User Name",
       "payment": "Refunded",
-      "fulfillment": "Fulfilled",
+      "fulfillment": {
+        "id": 1,
+        "name": "Unfulfilled"
+      },
       "total": "800.03"
     },
     {
@@ -122,7 +137,10 @@
       "date": "Feb24 at 02:30am",
       "customer": "User Name",
       "payment": "Paid",
-      "fulfillment": "Fulfilled",
+      "fulfillment": {
+        "id": 0,
+        "name": "Fulfilled"
+      },
       "total": "728.03"
     }
   ]

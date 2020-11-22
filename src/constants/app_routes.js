@@ -1,4 +1,9 @@
 export const AppRoutes = {
   DASHBOARD: '/',
-  ALL_ORDERS: '/all-orders',
+  ALL_ORDERS: {
+    MAIN: '/all-orders',
+  },
+  order(id) {
+    return `/orders/${id}`;
+  },
 };

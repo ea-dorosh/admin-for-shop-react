@@ -8,7 +8,7 @@ function NavigationSubList() {
   return (
       <ul className={'navigation-sub-list'}>
         <li className={'navigation-sub-list__item'}>
-          <Link to={AppRoutes.ALL_ORDERS} className='navigation-sub-list__item navigation-sub-list__item-link'>
+          <Link to={AppRoutes.ALL_ORDERS.MAIN} className='navigation-sub-list__item navigation-sub-list__item-link'>
             All Orders
           </Link>
         </li>
