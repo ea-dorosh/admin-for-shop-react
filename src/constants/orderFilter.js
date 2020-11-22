@@ -1,3 +1,9 @@
+export const OrderFilterStatusTypes = {
+  ALL: 'All',
+  ONLINE: 'Online',
+  OFFLINE: 'Offline',
+};
+
 export const OrderFilterPaymentTypes = {
   ALL: 'All',
   PAID: 'Paid',

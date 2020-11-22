@@ -7,12 +7,21 @@
   color: #333333;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-right: 0;
+  cursor: pointer;
 
   &:last-child {
     border-right: 1px solid rgba(0, 0, 0, 0.1);
   }
 
+  &:hover {
+    background: #eeeeee;
+  }
+
   &.active {
     color: #2771FF;
+
+    &:hover {
+      background: transparent;
+    }
   }
 }

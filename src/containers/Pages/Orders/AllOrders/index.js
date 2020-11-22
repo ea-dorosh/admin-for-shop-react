@@ -1,8 +1,8 @@
-import React from "react";
-import {useSelector} from "react-redux"
+import React, {useEffect} from "react";
+import {useDispatch, useSelector} from "react-redux"
 import "./index.scss"
-import {OrderFilterPaymentTypes} from "../../../../constants/orderFilter"
-import {OrderFilterFulfillmentTypes} from "../../../../constants/orderFilter"
+import {OrderFilterPaymentTypes, OrderFilterStatusTypes, OrderFilterFulfillmentTypes} from "../../../../constants/orderFilter"
+import {filterOrdersPayment, filterOrdersFulfillment, filterOrdersStatus, fetchOrders} from "../../../../actions/actions";
 import Header from "../../../../components/ControlPanel/Header";
 import Navigation from "../../../../components/ControlPanel/Navigation";
 import Page from "../../../../components/ControlPanel/Page";
@@ -20,9 +20,15 @@ import PageHeader from "../../../../components/ControlPanel/Page/PageHeader";
 function AllOrders() {
 
   const orders = useSelector(state => state.orders.orders);
+  const filterStatus = useSelector(state => state.orders.filterStatus);
   const filterPayment = useSelector(state => state.orders.filterPayment);
   const filterFulfillment = useSelector(state => state.orders.filterFulfillment);
-  console.log(filterPayment)
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchOrders())
+  }, [dispatch])
 
   return (
       <>
@@ -34,15 +40,20 @@ function AllOrders() {
             <div className='dashboard-page__wrapper'>
               <div className='dashboard-page__top-inner'>
                 <Tab>
-                  <TabItem title={'All'} isActive/>
-                  <TabItem title={'Offline'}/>
-                  <TabItem title={'Online'}/>
+                  {Object.values(OrderFilterStatusTypes).map((filter) => (
+                      <TabItem
+                          filterHandle={filterOrdersStatus}
+                          title={filter}
+                          isActive={filterStatus === filter}
+                          key={filter}/>
+                  ))}
                 </Tab>
               </div>
               <div className='dashboard-page__filter-wrapper'>
                 <TabFilter>
                   {Object.values(OrderFilterPaymentTypes).map((filter) => (
                       <TabFilterItem
+                          filterHandle={filterOrdersPayment}
                           title={filter}
                           key={filter}
                           isActive={filterPayment === filter}/>
@@ -51,6 +62,7 @@ function AllOrders() {
                 <TabFilter>
                   {Object.values(OrderFilterFulfillmentTypes).map((filter) => (
                       <TabFilterItem
+                          filterHandle={filterOrdersFulfillment}
                           title={filter}
                           key={filter}
                           isActive={filterFulfillment === filter}/>

@@ -1,5 +1,6 @@
 import React from "react";
-import {useSelector} from "react-redux"
+import {useSelector, useDispatch} from "react-redux"
+import {useEffect} from "react"
 import "./index.scss"
 import Header from "../../../components/ControlPanel/Header";
 import Navigation from "../../../components/ControlPanel/Navigation";
@@ -10,11 +11,17 @@ import Table from "../../../components/ControlPanel/Table";
 import TableHead from "../../../components/ControlPanel/Table/TableHead";
 import TableData from "../../../components/ControlPanel/Table/TableData";
 import TableRow from "../../../components/ControlPanel/Table/TableRow";
+import {fetchShops} from "../../../actions/actions"
 
 
 function Dashboard() {
 
   const shops = useSelector(state => state.shops.shops);
+  const dispatch = useDispatch();
+
+  useEffect(()=>{
+    dispatch(fetchShops())
+  }, [dispatch])
 
   const calculateTotal = function () {
     let totalAmount = 0;
