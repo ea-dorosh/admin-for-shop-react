@@ -1,20 +1,20 @@
 import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux"
 import "./index.scss"
-import {OrderFilterPaymentTypes, OrderFilterStatusTypes, OrderFilterFulfillmentTypes} from "../../../../constants/orderFilter"
-import {filterOrdersPayment, filterOrdersFulfillment, filterOrdersStatus, fetchOrders} from "../../../../actions/actions";
-import Header from "../../../../components/ControlPanel/Header";
-import Navigation from "../../../../components/ControlPanel/Navigation";
-import Page from "../../../../components/ControlPanel/Page";
-import Tab from "../../../../components/ControlPanel/Tab";
-import TabItem from "../../../../components/ControlPanel/Tab/TabItem";
-import TabFilter from "../../../../components/ControlPanel/TabFilter";
-import TabFilterItem from "../../../../components/ControlPanel/TabFilter/TabFilterItem";
-import Table from "../../../../components/ControlPanel/Table";
-import TableHead from "../../../../components/ControlPanel/Table/TableHead";
-import TableData from "../../../../components/ControlPanel/Table/TableData";
-import TableRow from "../../../../components/ControlPanel/Table/TableRow";
-import PageHeader from "../../../../components/ControlPanel/Page/PageHeader";
+import {OrderFilterPaymentTypes, OrderFilterStatusTypes, OrderFilterFulfillmentTypes} from "constants/orderFilter"
+import {filterOrdersPayment, filterOrdersFulfillment, filterOrdersStatus, fetchOrders} from "actions/actions";
+import Header from "components/ControlPanel/Header";
+import Navigation from "components/ControlPanel/Navigation";
+import Page from "components/ControlPanel/Page";
+import Tab from "components/ControlPanel/Tab";
+import TabItem from "components/ControlPanel/Tab/TabItem";
+import TabFilter from "components/ControlPanel/TabFilter";
+import TabFilterItem from "components/ControlPanel/TabFilter/TabFilterItem";
+import Table from "components/ControlPanel/Table";
+import TableHead from "components/ControlPanel/Table/TableHead";
+import TableData from "components/ControlPanel/Table/TableData";
+import TableRow from "components/ControlPanel/Table/TableRow";
+import PageHeader from "components/ControlPanel/Page/PageHeader";
 
 
 function AllOrders() {

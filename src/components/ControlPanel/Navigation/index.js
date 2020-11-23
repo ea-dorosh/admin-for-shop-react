@@ -1,6 +1,6 @@
 import React from "react";
 import "./index.scss"
-import NavigationList from "./NavigationList";
+import NavigationList from "components/ControlPanel/Navigation/NavigationList";
 
 
 function Navigation() {

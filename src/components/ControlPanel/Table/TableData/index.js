@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.scss"
 import {Link, withRouter} from 'react-router-dom';
-import {AppRoutes} from "../../../../constants/app_routes";
+import {AppRoutes} from "constants/app_routes";
 
 const TableData = props => {
   const {payment, fulfillment, id} = props;

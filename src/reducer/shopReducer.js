@@ -1,4 +1,4 @@
-import {FETCH_SHOPS} from "../actions/actionTypes";
+import {FETCH_SHOPS} from "actions/actionTypes";
 
 
 const initialState = {

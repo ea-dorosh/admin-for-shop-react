@@ -2,10 +2,10 @@ import React, {useEffect} from "react";
 import "./index.scss"
 import {useSelector, useDispatch} from "react-redux"
 import {useParams, useHistory} from 'react-router-dom';
-import Header from "../../../../components/ControlPanel/Header";
-import Navigation from "../../../../components/ControlPanel/Navigation";
-import Page from "../../../../components/ControlPanel/Page";
-import {fetchOrders} from "../../../../actions/actions";
+import Header from "components/ControlPanel/Header";
+import Navigation from "components/ControlPanel/Navigation";
+import Page from "components/ControlPanel/Page";
+import {fetchOrders} from "actions/actions";
 
 
 function Order() {

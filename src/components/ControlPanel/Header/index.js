@@ -1,6 +1,6 @@
 import React from "react";
-import Account from "./Account";
-import Logo from "./Logo"
+import Account from "components/ControlPanel/Header/Account";
+import Logo from "components/ControlPanel/Header/Logo"
 import "./index.scss"
 
 

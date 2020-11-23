@@ -1,10 +1,10 @@
-import {OrderFilterPaymentTypes, OrderFilterStatusTypes, OrderFilterFulfillmentTypes} from "../constants/orderFilter"
+import {OrderFilterPaymentTypes, OrderFilterStatusTypes, OrderFilterFulfillmentTypes} from "constants/orderFilter"
 import {
   FETCH_ORDERS,
   FILTER_ORDERS_FULFILLMENT,
   FILTER_ORDERS_PAYMENT,
   FILTER_ORDERS_STATUS
-} from "../actions/actionTypes";
+} from "actions/actionTypes";
 
 
 const initialState = {

@@ -1,8 +1,8 @@
 import React from "react";
 import {Link, withRouter} from 'react-router-dom';
 import "./index.scss"
-import NavigationSubList from "../NavigationSubList";
-import {AppRoutes} from "../../../../constants/app_routes";
+import NavigationSubList from "components/ControlPanel/Navigation/NavigationSubList";
+import {AppRoutes} from "constants/app_routes";
 
 
 function NavigationList() {
