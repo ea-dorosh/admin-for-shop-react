@@ -12,19 +12,13 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route exact path={AppRoutes.DASHBOARD}>
-            <div className={'app-wrapper'}>
-              <Dashboard/>
-            </div>
+            <Dashboard/>
           </Route>
           <Route exact path={AppRoutes.ALL_ORDERS.MAIN}>
-            <div className={'app-wrapper'}>
               <AllOrders/>
-            </div>
           </Route>
           <Route path='/orders/:id'>
-            <div className={'app-wrapper'}>
-              <Order/>
-            </div>
+            <Order/>
           </Route>
         </Switch>
       </BrowserRouter>

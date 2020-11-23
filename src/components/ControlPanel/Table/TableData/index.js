@@ -4,13 +4,13 @@ import {Link, withRouter} from 'react-router-dom';
 import {AppRoutes} from "../../../../constants/app_routes";
 
 const TableData = props => {
-  const {payment, fulfillment, checkout} = props;
+  const {payment, fulfillment, id} = props;
 
   return (
       <td className='table__data'>
-        {checkout ?
+        {id ?
             <Link
-                to={AppRoutes.order(checkout)}
+                to={AppRoutes.order(id)}
             >
               {props.children}
             </Link>

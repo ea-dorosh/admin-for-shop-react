@@ -28,10 +28,10 @@ function AllOrders() {
 
   useEffect(() => {
     dispatch(fetchOrders())
-  }, [dispatch])
+  }, [dispatch]);
 
   return (
-      <>
+      <div className={'app-wrapper'}>
         <Header/>
         <Navigation/>
         <Page>
@@ -83,7 +83,7 @@ function AllOrders() {
                 <tbody>
                 {orders.map((order, index) => (
                     <TableRow key={index}>
-                      <TableData checkout={order.checkout}>{order.checkout}</TableData>
+                      <TableData id={order.id}>{order.checkout}</TableData>
                       <TableData>{order.date}</TableData>
                       <TableData>{order.customer}</TableData>
                       <TableData payment>{order.payment}</TableData>
@@ -96,7 +96,7 @@ function AllOrders() {
             </div>
           </div>
         </Page>
-      </>
+      </div>
   );
 }
 

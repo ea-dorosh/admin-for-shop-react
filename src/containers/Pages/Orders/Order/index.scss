@@ -1,44 +1,84 @@
-.dashboard-page__top-wrapper {
-    padding: 40px;
-    background-color: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+.order-header {
+
 }
 
-.dashboard-page__top-inner {
-    padding: 0 40px;
-    border-bottom: 1px solid #D6D6D6;
+.order-header__link {
+    position: relative;
+    padding: 0 0 0 15px;
+    border: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #555555;
+    background: transparent;
+    cursor: pointer;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        opacity: .7;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 2px;
+        top: 4px;
+    }
+
+    &--back {
+        &::before {
+            width: 7px;
+            height: 7px;
+            border-top: 1px solid #555555;
+            border-right: 1px solid #555555;
+            transform: rotate(-135deg);
+        }
+    }
 }
 
-.dashboard-page__wrapper {
-    padding: 30px 0 40px 0;
-    background-color: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+.order-header__wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    margin-top: 5px;
 }
 
-.dashboard-page__top-title {
-    font-family: Roboto, sans-serif;
+.order-header__title {
+    margin-right: 10px;
+    font-family: Rubik, sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 22px;
+    line-height: 28px;
     color: #333333;
 }
 
-.dashboard-page__sales {
-    display: flex;
-    margin-top: 25px;
+.order-header__date {
+    margin-right: 20px;
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+    color: #333333;
 }
 
-.dashboard-page__bottom-wrapper {
-    margin-top: 30px;
-    padding: 40px 0;
-    background-color: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+.order-header__payment {
+    margin-right: 20px;
 }
 
-.dashboard-page__filter-wrapper {
-    display: flex;
-    justify-content: flex-end;
-    margin-right: -20px;
-    padding: 16px 40px 24px 40px;
+.order-header__link-wrapper {
+    margin-top: 10px;
+
+    .order-header__link {
+        margin-right: 20px;
+    }
+}
+
+.order-content__wrapper {
+    width: 767px;
 }

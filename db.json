@@ -72,6 +72,11 @@
   "orders":
   [
     {
+      "shop": {
+        "name": "Online Store",
+        "type": "Warehouses"
+      },
+      "id": 6,
       "type": "online",
       "checkout": "#online_7392",
       "date": "Feb24 at 02:30am",
@@ -84,6 +89,11 @@
       "total": "728.03"
     },
     {
+      "shop": {
+        "name": "AVS1",
+        "type": "Shop"
+      },
+      "id": 1,
       "type": "online",
       "checkout": "#online_0000",
       "date": "Feb24 at 02:30am",
@@ -96,6 +106,11 @@
       "total": "700.33"
     },
     {
+      "shop": {
+        "name": "AVS2",
+        "type": "Shop"
+      },
+      "id": 2,
       "type": "online",
       "checkout": "#online_1111",
       "date": "Feb24 at 02:30am",
@@ -108,6 +123,11 @@
       "total": "800.03"
     },
     {
+      "shop": {
+        "name": "AVS3",
+        "type": "Shop"
+      },
+      "id": 3,
       "type": "offline",
       "checkout": "#avs_1111",
       "date": "Feb24 at 02:30am",
@@ -120,6 +140,11 @@
       "total": "728.03"
     },
     {
+      "shop": {
+        "name": "AVS1",
+        "type": "Shop"
+      },
+      "id": 4,
       "type": "online",
       "checkout": "#online_4321",
       "date": "Feb24 at 02:30am",
@@ -132,6 +157,11 @@
       "total": "800.03"
     },
     {
+      "shop": {
+        "name": "AVS1",
+        "type": "Shop"
+      },
+      "id": 5,
       "type": "online",
       "checkout": "#avs_1234",
       "date": "Feb24 at 02:30am",

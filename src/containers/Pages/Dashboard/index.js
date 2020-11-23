@@ -34,7 +34,7 @@ function Dashboard() {
   };
 
   return (
-      <>
+      <div className={'app-wrapper'}>
         <Header/>
         <Navigation/>
         <Page>
@@ -82,7 +82,7 @@ function Dashboard() {
             </div>
           </div>
         </Page>
-      </>
+      </div>
   );
 }
 

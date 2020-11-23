@@ -7,8 +7,8 @@ import {
 } from "./actionTypes";
 
 
-const shopUrl = 'http://localhost:3000/shops'
-const orderUrl = 'http://localhost:3000/orders'
+const shopUrl = 'http://localhost:3000/shops';
+const orderUrl = 'http://localhost:3000/orders';
 
 export function filterOrdersPayment(filter) {
   return {
@@ -33,16 +33,16 @@ export function filterOrdersStatus(filter) {
 
 export function fetchShops() {
   return async dispatch => {
-    const response = await fetch(shopUrl)
-    const json = await response.json()
+    const response = await fetch(shopUrl);
+    const json = await response.json();
     dispatch({type: FETCH_SHOPS, payload: json})
   }
 }
 
 export function fetchOrders() {
   return async dispatch => {
-    const response = await fetch(orderUrl)
-    const json = await response.json()
+    const response = await fetch(orderUrl);
+    const json = await response.json();
     dispatch({type: FETCH_ORDERS, payload: json})
   }
 }
