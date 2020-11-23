@@ -4,14 +4,16 @@ import {useEffect} from "react"
 import "./index.scss"
 import Header from "components/ControlPanel/Header";
 import Navigation from "components/ControlPanel/Navigation";
-import Page from "components/ControlPanel/Page";
-import PageHeader from "components/ControlPanel/Page/PageHeader";
+import Main from "components/ControlPanel/Main";
+import MainHeader from "components/ControlPanel/Main/MainHeader";
 import SalesWidget from "components/Pages/Dashboard/SalesWidget";
 import Table from "components/ControlPanel/Table";
 import TableHead from "components/ControlPanel/Table/TableHead";
 import TableData from "components/ControlPanel/Table/TableData";
 import TableRow from "components/ControlPanel/Table/TableRow";
 import {fetchShops} from "actions/actions"
+import TitleH1 from "components/Titles/H1";
+import MainContent from "components/ControlPanel/Main/MainContent";
 
 
 function Dashboard() {
@@ -37,9 +39,11 @@ function Dashboard() {
       <div className={'app-wrapper'}>
         <Header/>
         <Navigation/>
-        <Page>
-          <PageHeader title={'Dashboard'}/>
-          <div className={'page__content'}>
+        <Main>
+          <MainHeader>
+            <TitleH1 title={'Dashboard'}/>
+          </MainHeader>
+          <MainContent>
             <div className='dashboard-page__top-wrapper'>
               <h3 className='dashboard-page__top-title'>Daily Sales</h3>
               <div className='dashboard-page__sales'>
@@ -80,8 +84,8 @@ function Dashboard() {
                 </tbody>
               </Table>
             </div>
-          </div>
-        </Page>
+          </MainContent>
+        </Main>
       </div>
   );
 }

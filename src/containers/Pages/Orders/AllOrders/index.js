@@ -5,7 +5,7 @@ import {OrderFilterPaymentTypes, OrderFilterStatusTypes, OrderFilterFulfillmentT
 import {filterOrdersPayment, filterOrdersFulfillment, filterOrdersStatus, fetchOrders} from "actions/actions";
 import Header from "components/ControlPanel/Header";
 import Navigation from "components/ControlPanel/Navigation";
-import Page from "components/ControlPanel/Page";
+import Main from "components/ControlPanel/Main";
 import Tab from "components/ControlPanel/Tab";
 import TabItem from "components/ControlPanel/Tab/TabItem";
 import TabFilter from "components/ControlPanel/TabFilter";
@@ -14,7 +14,9 @@ import Table from "components/ControlPanel/Table";
 import TableHead from "components/ControlPanel/Table/TableHead";
 import TableData from "components/ControlPanel/Table/TableData";
 import TableRow from "components/ControlPanel/Table/TableRow";
-import PageHeader from "components/ControlPanel/Page/PageHeader";
+import MainHeader from "components/ControlPanel/Main/MainHeader";
+import TitleH1 from "components/Titles/H1";
+import MainContent from "components/ControlPanel/Main/MainContent";
 
 
 function AllOrders() {
@@ -34,9 +36,11 @@ function AllOrders() {
       <div className={'app-wrapper'}>
         <Header/>
         <Navigation/>
-        <Page>
-          <PageHeader title={'All Orders'}/>
-          <div className={'page__content'}>
+        <Main>
+          <MainHeader>
+            <TitleH1 title={'All Orders'}/>
+          </MainHeader>
+          <MainContent>
             <div className='dashboard-page__wrapper'>
               <div className='dashboard-page__top-inner'>
                 <Tab>
@@ -94,8 +98,8 @@ function AllOrders() {
                 </tbody>
               </Table>
             </div>
-          </div>
-        </Page>
+          </MainContent>
+        </Main>
       </div>
   );
 }

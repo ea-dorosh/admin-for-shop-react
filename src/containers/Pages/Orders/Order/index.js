@@ -2,10 +2,12 @@ import React, {useEffect} from "react";
 import "./index.scss"
 import {useSelector, useDispatch} from "react-redux"
 import {useParams, useHistory} from 'react-router-dom';
+import {fetchOrders} from "actions/actions";
 import Header from "components/ControlPanel/Header";
 import Navigation from "components/ControlPanel/Navigation";
-import Page from "components/ControlPanel/Page";
-import {fetchOrders} from "actions/actions";
+import Main from "components/ControlPanel/Main";
+import MainHeader from "components/ControlPanel/Main/MainHeader";
+import MainContent from "components/ControlPanel/Main/MainContent";
 
 
 function Order() {
@@ -28,8 +30,8 @@ function Order() {
             <>
               <Header/>
               <Navigation/>
-              <Page>
-                <div className={'page__header order-header'}>
+              <Main>
+                <MainHeader>
                   <button type='button' className='order-header__link order-header__link--back' onClick={() => history.goBack()}>All Orders</button>
                   <div className='order-header__wrapper'>
                     <span className='order-header__title'>{order.checkout}</span>
@@ -41,13 +43,11 @@ function Order() {
                     <button type='button' className='order-header__link'>Print</button>
                     <button type='button' className='order-header__link'>Refund</button>
                   </div>
-                </div>
-                <div className={'page__content'}>
-                  <div className='order-content'>
+                </MainHeader>
+                <MainContent>
 
-                  </div>
-                </div>
-              </Page>
+                </MainContent>
+              </Main>
             </>
             :
             null
