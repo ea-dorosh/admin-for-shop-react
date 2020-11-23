@@ -3,9 +3,13 @@ import {useDispatch, useSelector} from "react-redux"
 import "./index.scss"
 import {OrderFilterPaymentTypes, OrderFilterStatusTypes, OrderFilterFulfillmentTypes} from "constants/orderFilter"
 import {filterOrdersPayment, filterOrdersFulfillment, filterOrdersStatus, fetchOrders} from "actions/actions";
+import Page from "components/ControlPanel/Page";
 import Header from "components/ControlPanel/Header";
 import Navigation from "components/ControlPanel/Navigation";
 import Main from "components/ControlPanel/Main";
+import MainHeader from "components/ControlPanel/Main/MainHeader";
+import MainContent from "components/ControlPanel/Main/MainContent";
+import TitleH1 from "components/Titles/H1";
 import Tab from "components/ControlPanel/Tab";
 import TabItem from "components/ControlPanel/Tab/TabItem";
 import TabFilter from "components/ControlPanel/TabFilter";
@@ -14,9 +18,6 @@ import Table from "components/ControlPanel/Table";
 import TableHead from "components/ControlPanel/Table/TableHead";
 import TableData from "components/ControlPanel/Table/TableData";
 import TableRow from "components/ControlPanel/Table/TableRow";
-import MainHeader from "components/ControlPanel/Main/MainHeader";
-import TitleH1 from "components/Titles/H1";
-import MainContent from "components/ControlPanel/Main/MainContent";
 
 
 function AllOrders() {
@@ -25,7 +26,6 @@ function AllOrders() {
   const filterStatus = useSelector(state => state.orders.filterStatus);
   const filterPayment = useSelector(state => state.orders.filterPayment);
   const filterFulfillment = useSelector(state => state.orders.filterFulfillment);
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -33,7 +33,7 @@ function AllOrders() {
   }, [dispatch]);
 
   return (
-      <div className={'app-wrapper'}>
+      <Page>
         <Header/>
         <Navigation/>
         <Main>
@@ -100,7 +100,7 @@ function AllOrders() {
             </div>
           </MainContent>
         </Main>
-      </div>
+      </Page>
   );
 }
 

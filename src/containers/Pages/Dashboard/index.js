@@ -2,6 +2,8 @@ import React from "react";
 import {useSelector, useDispatch} from "react-redux"
 import {useEffect} from "react"
 import "./index.scss"
+import {fetchShops} from "actions/actions"
+import Page from "components/ControlPanel/Page";
 import Header from "components/ControlPanel/Header";
 import Navigation from "components/ControlPanel/Navigation";
 import Main from "components/ControlPanel/Main";
@@ -11,9 +13,9 @@ import Table from "components/ControlPanel/Table";
 import TableHead from "components/ControlPanel/Table/TableHead";
 import TableData from "components/ControlPanel/Table/TableData";
 import TableRow from "components/ControlPanel/Table/TableRow";
-import {fetchShops} from "actions/actions"
 import TitleH1 from "components/Titles/H1";
 import MainContent from "components/ControlPanel/Main/MainContent";
+
 
 
 function Dashboard() {
@@ -36,7 +38,7 @@ function Dashboard() {
   };
 
   return (
-      <div className={'app-wrapper'}>
+      <Page>
         <Header/>
         <Navigation/>
         <Main>
@@ -86,7 +88,7 @@ function Dashboard() {
             </div>
           </MainContent>
         </Main>
-      </div>
+      </Page>
   );
 }
 

@@ -3,6 +3,7 @@ import "./index.scss"
 import {useSelector, useDispatch} from "react-redux"
 import {useParams, useHistory} from 'react-router-dom';
 import {fetchOrders} from "actions/actions";
+import Page from "components/ControlPanel/Page";
 import Header from "components/ControlPanel/Header";
 import Navigation from "components/ControlPanel/Navigation";
 import Main from "components/ControlPanel/Main";
@@ -25,7 +26,7 @@ function Order() {
 
 
   return (
-      <div className={'app-wrapper'}>
+      <Page>
         {order ?
             <>
               <Header/>
@@ -52,7 +53,7 @@ function Order() {
             :
             null
         }
-      </div>
+      </Page>
   );
 }
 
