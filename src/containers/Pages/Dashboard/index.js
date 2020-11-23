@@ -46,8 +46,8 @@ function Dashboard() {
             <TitleH1 title={'Dashboard'}/>
           </MainHeader>
           <MainContent>
-            <div className='dashboard-page__top-wrapper'>
-              <h3 className='dashboard-page__top-title'>Daily Sales</h3>
+            <div className='dashboard-page__wrapper main-content__wrapper'>
+              <h3 className='dashboard-page__title'>Daily Sales</h3>
               <div className='dashboard-page__sales'>
                 <SalesWidget
                     total
@@ -62,7 +62,7 @@ function Dashboard() {
                 ))}
               </div>
             </div>
-            <div className='dashboard-page__bottom-wrapper'>
+            <div className='dashboard-page__bottom-wrapper main-content__wrapper'>
               <Table tableType={'shops'}>
                 <thead>
                 <TableRow>

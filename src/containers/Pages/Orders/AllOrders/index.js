@@ -41,8 +41,8 @@ function AllOrders() {
             <TitleH1 title={'All Orders'}/>
           </MainHeader>
           <MainContent>
-            <div className='dashboard-page__wrapper'>
-              <div className='dashboard-page__top-inner'>
+            <div className='all-orders-page__wrapper main-content__wrapper'>
+              <div className='all-orders-page__top-wrapper'>
                 <Tab>
                   {Object.values(OrderFilterStatusTypes).map((filter) => (
                       <TabItem
@@ -53,7 +53,7 @@ function AllOrders() {
                   ))}
                 </Tab>
               </div>
-              <div className='dashboard-page__filter-wrapper'>
+              <div className='all-orders-page__filter-wrapper'>
                 <TabFilter>
                   {Object.values(OrderFilterPaymentTypes).map((filter) => (
                       <TabFilterItem
