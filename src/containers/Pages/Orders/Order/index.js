@@ -27,10 +27,10 @@ function Order() {
 
   return (
       <Page>
+        <Header/>
+        <Navigation/>
         {order ?
             <>
-              <Header/>
-              <Navigation/>
               <Main>
                 <MainHeader>
                   <button type='button' className='order-header__link order-header__link--back' onClick={() => history.goBack()}>All Orders</button>

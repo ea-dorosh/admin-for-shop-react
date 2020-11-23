@@ -7,8 +7,8 @@ import {
 } from "./actionTypes";
 
 
-const shopUrl = 'http://localhost:3000/shops';
-const orderUrl = 'http://localhost:3000/orders';
+const shopUrl = 'http://localhost:3001/shops';
+const orderUrl = 'http://localhost:3001/orders';
 
 export function filterOrdersPayment(filter) {
   return {
