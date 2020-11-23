@@ -2,14 +2,10 @@ import React from "react";
 import "./index.scss"
 
 
-function Page(props) {
-    const {children} = props;
-
+function Main(props) {
     return (
-        <div className={'page'}>
-                {children}
-        </div>
+        <div className={'main'}>{props.children}</div>
     );
 }
 
-export default Page;
+export default Main;
