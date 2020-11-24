@@ -4,7 +4,7 @@ import "./index.scss"
 import {OrderFilterPaymentTypes, OrderFilterStatusTypes, OrderFilterFulfillmentTypes} from "constants/orderFilter"
 import {filterOrdersPayment, filterOrdersFulfillment, filterOrdersStatus, fetchOrders} from "actions/actions";
 import Page from "components/ControlPanel/Page";
-import Header from "components/ControlPanel/Header";
+import HeaderContainer from "containers/ControlPanel/Header";
 import Navigation from "components/ControlPanel/Navigation";
 import Main from "components/ControlPanel/Main";
 import MainHeader from "components/ControlPanel/Main/MainHeader";
@@ -34,7 +34,7 @@ function AllOrders() {
 
   return (
       <Page>
-        <Header/>
+        <HeaderContainer/>
         <Navigation/>
         <Main>
           <MainHeader>

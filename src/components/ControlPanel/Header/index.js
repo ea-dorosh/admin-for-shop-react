@@ -1,16 +1,13 @@
 import React from "react";
-import Account from "components/ControlPanel/Header/Account";
-import Logo from "components/ControlPanel/Header/Logo"
 import "./index.scss"
 
 
-function Header() {
-    return (
-        <header className={'header'}>
-            <Logo/>
-            <Account/>
-        </header>
-    );
+function Header(props) {
+  return (
+      <header className={'header'}>
+        {props.children}
+      </header>
+  );
 }
 
 export default Header;

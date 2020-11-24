@@ -3,8 +3,8 @@ import {useSelector, useDispatch} from "react-redux"
 import {useEffect} from "react"
 import "./index.scss"
 import {fetchShops} from "actions/actions"
+import HeaderContainer from "containers/ControlPanel/Header";
 import Page from "components/ControlPanel/Page";
-import Header from "components/ControlPanel/Header";
 import Navigation from "components/ControlPanel/Navigation";
 import Main from "components/ControlPanel/Main";
 import MainHeader from "components/ControlPanel/Main/MainHeader";
@@ -15,6 +15,7 @@ import TableData from "components/ControlPanel/Table/TableData";
 import TableRow from "components/ControlPanel/Table/TableRow";
 import TitleH1 from "components/Titles/H1";
 import MainContent from "components/ControlPanel/Main/MainContent";
+
 
 
 
@@ -39,7 +40,7 @@ function Dashboard() {
 
   return (
       <Page>
-        <Header/>
+        <HeaderContainer/>
         <Navigation/>
         <Main>
           <MainHeader>
