@@ -1,10 +1,10 @@
-import React from "react";
-import {BrowserRouter, Route, Switch} from "react-router-dom";
-import {AppRoutes} from "constants/app_routes";
-import "./index.scss"
-import Dashboard from "containers/Pages/Dashboard";
-import AllOrders from "containers/Pages/Orders/AllOrders";
-import Order from "containers/Pages/Orders/Order";
+import React from 'react';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {AppRoutes} from 'constants/app_routes';
+import './index.scss'
+import Dashboard from 'containers/Pages/Dashboard';
+import AllOrders from 'containers/Pages/Orders/AllOrders';
+import Order from 'containers/Pages/Orders/Order';
 
 
 function App() {

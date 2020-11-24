@@ -1,15 +1,14 @@
-import React, {useEffect} from "react";
-import "./index.scss"
-import {useSelector, useDispatch} from "react-redux"
-import {useParams, useHistory} from 'react-router-dom';
-import {fetchOrders} from "actions/actions";
-import Page from "components/ControlPanel/Page";
-import HeaderContainer from "containers/ControlPanel/Header";
-import Navigation from "components/ControlPanel/Navigation";
-import Main from "components/ControlPanel/Main";
-import MainHeader from "components/ControlPanel/Main/MainHeader";
-import MainContent from "components/ControlPanel/Main/MainContent";
-
+import React, {useEffect} from 'react';
+import './index.scss'
+import {useDispatch, useSelector} from 'react-redux'
+import {useHistory, useParams} from 'react-router-dom';
+import {fetchOrders} from 'actions/actions';
+import Page from 'components/ControlPanel/Page';
+import HeaderContainer from 'containers/ControlPanel/Header';
+import Navigation from 'components/ControlPanel/Navigation';
+import Main from 'components/ControlPanel/Main';
+import MainHeader from 'components/ControlPanel/Main/MainHeader';
+import MainContent from 'components/ControlPanel/Main/MainContent';
 
 
 function Order() {
