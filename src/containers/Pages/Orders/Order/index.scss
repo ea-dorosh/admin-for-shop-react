@@ -1,80 +1,80 @@
 .order-header__link {
-    position: relative;
-    padding: 0 0 0 15px;
-    border: 0;
-    font-family: 'Roboto', sans-serif;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 18px;
-    color: #555555;
-    background: transparent;
-    cursor: pointer;
+  position: relative;
+  padding: 0 0 0 15px;
+  border: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: #555555;
+  background: transparent;
+  cursor: pointer;
 
-    &:focus {
-        outline: none;
-    }
+  &:focus {
+    outline: none;
+  }
 
-    &:hover {
-        opacity: .7;
-    }
+  &:hover {
+    opacity: .7;
+  }
 
+  &::before {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 4px;
+  }
+
+  &--back {
     &::before {
-        content: '';
-        position: absolute;
-        left: 2px;
-        top: 4px;
+      width: 7px;
+      height: 7px;
+      border-top: 1px solid #555555;
+      border-right: 1px solid #555555;
+      transform: rotate(-135deg);
     }
-
-    &--back {
-        &::before {
-            width: 7px;
-            height: 7px;
-            border-top: 1px solid #555555;
-            border-right: 1px solid #555555;
-            transform: rotate(-135deg);
-        }
-    }
+  }
 }
 
 .order-header__wrapper {
-    display: flex;
-    justify-content: flex-start;
-    align-items: baseline;
-    margin-top: 5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  margin-top: 5px;
 }
 
 .order-header__title {
-    margin-right: 10px;
-    font-family: Rubik, sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 22px;
-    line-height: 28px;
-    color: #333333;
+  margin-right: 10px;
+  font-family: Rubik, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 28px;
+  color: #333333;
 }
 
 .order-header__date {
-    margin-right: 20px;
-    font-family: Roboto, sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 18px;
-    color: #333333;
+  margin-right: 20px;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  color: #333333;
 }
 
 .order-header__payment {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 
 .order-header__link-wrapper {
-    margin-top: 10px;
+  margin-top: 10px;
 
-    .order-header__link {
-        margin-right: 20px;
-    }
+  .order-header__link {
+    margin-right: 20px;
+  }
 }
 
 .order-content__wrapper {
-    width: 767px;
+  width: 767px;
 }

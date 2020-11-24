@@ -1,0 +1,58 @@
+.icon-status {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 8px 18px 8px 26px;
+  background: transparent;
+  border-radius: 14px;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 10px;
+  color: #333333;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    left: 10px;
+    top: 8px;
+    border-radius: 21px;
+  }
+}
+
+.fulfillment {
+  &--0 {
+    background: #EEEEEE;
+
+    &::before {
+      background: #555555;
+    }
+  }
+
+  &--1 {
+    background: #FBE19D;
+
+    &::before {
+      background: #F9C43C;
+    }
+  }
+
+  &--2 {
+    background: #EEEEEE;
+
+    &::before {
+      background: #555555;
+    }
+  }
+}
+
+.payment {
+  background: #EEEEEE;
+
+  &::before {
+    background: #555555;
+  }
+}

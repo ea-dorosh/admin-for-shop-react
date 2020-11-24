@@ -9,6 +9,7 @@ import Navigation from 'components/ControlPanel/Navigation';
 import Main from 'components/ControlPanel/Main';
 import MainHeader from 'components/ControlPanel/Main/MainHeader';
 import MainContent from 'components/ControlPanel/Main/MainContent';
+import IconStatus from 'components/ControlPanel/IconStatus';
 
 
 function Order() {
@@ -37,8 +38,8 @@ function Order() {
                   <div className='order-header__wrapper'>
                     <span className='order-header__title'>{order.checkout}</span>
                     <span className='order-header__date'>{order.date} from {order.shop.name}</span>
-                    <span className='payment order-header__payment'>{order.payment}</span>
-                    <span className={`fulfillment fulfillment--${order.fulfillment.id}`}>{order.fulfillment.name}</span>
+                    <IconStatus payment addClass={'order-header__payment'}>{order.payment}</IconStatus>
+                    <IconStatus fulfillment={order.fulfillment}>{order.fulfillment.name}</IconStatus>
                   </div>
                   <div className='order-header__link-wrapper'>
                     <button type='button' className='order-header__link'>Print</button>

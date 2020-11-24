@@ -1,5 +1,7 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux'
+import {Link} from 'react-router-dom';
+import {AppRoutes} from 'constants/app_routes.js';
 import './index.scss'
 import {OrderFilterFulfillmentTypes, OrderFilterPaymentTypes, OrderFilterStatusTypes} from 'constants/orderFilter'
 import {fetchOrders, filterOrdersFulfillment, filterOrdersPayment, filterOrdersStatus} from 'actions/actions';
@@ -18,6 +20,7 @@ import Table from 'components/ControlPanel/Table';
 import TableHead from 'components/ControlPanel/Table/TableHead';
 import TableData from 'components/ControlPanel/Table/TableData';
 import TableRow from 'components/ControlPanel/Table/TableRow';
+import IconStatus from 'components/ControlPanel/IconStatus';
 
 
 function AllOrders() {
@@ -73,7 +76,7 @@ function AllOrders() {
                   ))}
                 </TabFilter>
               </div>
-              <Table>
+              <Table tableType={'orders'}>
                 <thead>
                 <TableRow>
                   <TableHead>Checkout</TableHead>
@@ -87,11 +90,17 @@ function AllOrders() {
                 <tbody>
                 {orders.map((order, index) => (
                     <TableRow key={index}>
-                      <TableData id={order.id}>{order.checkout}</TableData>
+                      <TableData>
+                        <Link to={AppRoutes.order(order.id)}>{order.checkout}</Link>
+                      </TableData>
                       <TableData>{order.date}</TableData>
                       <TableData>{order.customer}</TableData>
-                      <TableData payment>{order.payment}</TableData>
-                      <TableData fulfillment={order.fulfillment}>{order.fulfillment.name}</TableData>
+                      <TableData>
+                        <IconStatus payment>{order.payment}</IconStatus>
+                      </TableData>
+                      <TableData>
+                        <IconStatus fulfillment={order.fulfillment}>{order.fulfillment.name}</IconStatus>
+                      </TableData>
                       <TableData>${order.total}</TableData>
                     </TableRow>
                 ))}
