@@ -3,9 +3,11 @@
     <JSCodeStyleSettings version="0">
       <option name="USE_DOUBLE_QUOTES" value="false" />
       <option name="FORCE_QUOTE_STYlE" value="true" />
-      <option name="USE_EXPLICIT_JS_EXTENSION" value="TRUE" />
       <option name="IMPORT_PREFER_ABSOLUTE_PATH" value="TRUE" />
     </JSCodeStyleSettings>
+    <TypeScriptCodeStyleSettings version="0">
+      <option name="IMPORT_PREFER_ABSOLUTE_PATH" value="TRUE" />
+    </TypeScriptCodeStyleSettings>
     <codeStyleSettings language="CSS">
       <indentOptions>
         <option name="INDENT_SIZE" value="2" />

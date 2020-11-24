@@ -20,7 +20,7 @@ import Table from 'components/ControlPanel/Table';
 import TableHead from 'components/ControlPanel/Table/TableHead';
 import TableData from 'components/ControlPanel/Table/TableData';
 import TableRow from 'components/ControlPanel/Table/TableRow';
-import IconStatus from 'components/ControlPanel/IconStatus';
+import StatusLabel from 'components/ControlPanel/UI/StatusLabel';
 
 
 function AllOrders() {
@@ -96,10 +96,10 @@ function AllOrders() {
                       <TableData>{order.date}</TableData>
                       <TableData>{order.customer}</TableData>
                       <TableData>
-                        <IconStatus payment>{order.payment}</IconStatus>
+                        <StatusLabel payment>{order.payment}</StatusLabel>
                       </TableData>
                       <TableData>
-                        <IconStatus fulfillment={order.fulfillment}>{order.fulfillment.name}</IconStatus>
+                        <StatusLabel fulfillment={order.fulfillment}>{order.fulfillment.name}</StatusLabel>
                       </TableData>
                       <TableData>${order.total}</TableData>
                     </TableRow>

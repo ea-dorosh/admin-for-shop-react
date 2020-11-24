@@ -7,16 +7,13 @@
   border-bottom: 1px solid #DDDDDD;
   padding-top: 25px;
   padding-bottom: 22px;
-
-  &:first-child {
-    padding-left: 40px;
-  }
 }
 
 .shops .table__data {
 
   &:first-child {
     font-weight: bold;
+    padding-left: 40px;
   }
 }
 
@@ -33,6 +30,20 @@
     &:hover {
       color: #2771FF;
     }
+  }
+
+  &:first-child {
+    padding-left: 40px;
+  }
+}
+
+.products .table__data {
+
+  &:first-child {
+    width: 80px;
+  }
+  &:nth-child(2) {
+    width: 380px;
   }
 }
 

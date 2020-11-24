@@ -76,5 +76,41 @@
 }
 
 .order-content__wrapper {
+  display: flex;
+  align-items: flex-start;
+}
+
+.order-content__left-wrapper {
   width: 767px;
+  margin-right: 50px;
+}
+
+.order-fulfillment {
+  margin-bottom: 30px;
+  padding: 40px ;
+}
+
+.order-fulfillment__top-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.order-fulfillment__text {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 22px;
+  color: #333333;
+
+  &--bold {
+    font-weight: 500;
+  }
+}
+
+.order-fulfillment__bottom-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
 }

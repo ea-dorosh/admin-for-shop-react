@@ -1,14 +1,14 @@
 import React from 'react'
-import './index.scss'
+import 'components/ControlPanel/UI/StatusLabel/index.scss'
 
 
-function IconStatus(props) {
+function StatusLabel(props) {
 
   const {payment, fulfillment, addClass} = props;
 
   return (
       <span
-          className={`icon-status
+          className={`status-label
               ${payment ? `payment` : ''}
               ${fulfillment ? `fulfillment fulfillment--${fulfillment.id}` : ''}
               ${addClass}
@@ -18,4 +18,4 @@ function IconStatus(props) {
   );
 }
 
-export default IconStatus;
+export default StatusLabel;

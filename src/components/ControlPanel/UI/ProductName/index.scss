@@ -1,0 +1,22 @@
+.product-name-box {
+  display: flex;
+  flex-direction: column;
+  font-family: Roboto, sans-serif;
+
+  &__name {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #083250;
+  }
+
+  &__category {
+    margin-top: 3px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    color: #555555;
+  }
+}
