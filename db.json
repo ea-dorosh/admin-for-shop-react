@@ -76,12 +76,15 @@
         "name": "Online Store",
         "type": "Warehouses"
       },
-      "id": 6,
+      "id": 6, 
       "type": "online",
       "checkout": "#online_7392",
       "date": "Feb24 at 02:30am",
       "customer": "User Name",
-      "payment": "Paid",
+      "payment": {
+        "id": 0,
+        "name": "Paid"
+      },
       "fulfillment": {
         "id": 0,
         "name": "Fulfilled"
@@ -98,7 +101,10 @@
       "checkout": "#online_0000",
       "date": "Feb24 at 02:30am",
       "customer": "User Name",
-      "payment": "Paid",
+      "payment": {
+        "id": 1,
+        "name": "Partially refunded"
+      },
       "fulfillment": {
         "id": 1,
         "name": "Unfulfilled"
@@ -115,7 +121,10 @@
       "checkout": "#online_1111",
       "date": "Feb24 at 02:30am",
       "customer": "User Name",
-      "payment": "Refunded",
+      "payment": {
+        "id": 1,
+        "name": "Partially refunded"
+      },
       "fulfillment": {
         "id": 2,
         "name": "Partially fulfilled"
@@ -132,7 +141,10 @@
       "checkout": "#avs_1111",
       "date": "Feb24 at 02:30am",
       "customer": "User Name",
-      "payment": "Paid",
+      "payment": {
+        "id": 2,
+        "name": "Refunded"
+      },
       "fulfillment": {
         "id": 2,
         "name": "Partially fulfilled"
@@ -149,7 +161,10 @@
       "checkout": "#online_4321",
       "date": "Feb24 at 02:30am",
       "customer": "User Name",
-      "payment": "Refunded",
+      "payment": {
+        "id": 2,
+        "name": "Refunded"
+      },
       "fulfillment": {
         "id": 1,
         "name": "Unfulfilled"
@@ -166,7 +181,10 @@
       "checkout": "#avs_1234",
       "date": "Feb24 at 02:30am",
       "customer": "User Name",
-      "payment": "Paid",
+      "payment": {
+        "id": 2,
+        "name": "Refunded"
+      },
       "fulfillment": {
         "id": 0,
         "name": "Fulfilled"

@@ -10,9 +10,16 @@
   font-size: 14px;
   line-height: 18px;
   color: #333333;
+  cursor: pointer;
 
   &:focus {
     outline: none;
+  }
+
+  &:hover {
+    background: linear-gradient(234.5deg, #418aff 1.91%, #0098ff 100%);
+    border-color: transparent;
+    color: #FFFFFF;
   }
 
   &--margin {
@@ -20,7 +27,12 @@
   }
 
   &--fill {
+    border: 0;
     background: linear-gradient(234.5deg, #2764FF 1.91%, #2587FF 100%);
     color: #FFFFFF;
+
+    &:hover {
+      background: linear-gradient(234.5deg, #418aff 1.91%, #0098ff 100%);
+    }
   }
 }

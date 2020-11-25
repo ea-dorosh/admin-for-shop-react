@@ -96,7 +96,7 @@ function AllOrders() {
                       <TableData>{order.date}</TableData>
                       <TableData>{order.customer}</TableData>
                       <TableData>
-                        <StatusLabel payment>{order.payment}</StatusLabel>
+                        <StatusLabel payment>{order.payment.name}</StatusLabel>
                       </TableData>
                       <TableData>
                         <StatusLabel fulfillment={order.fulfillment}>{order.fulfillment.name}</StatusLabel>

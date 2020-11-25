@@ -45,7 +45,7 @@ function Order() {
                   <div className='order-header__wrapper'>
                     <span className='order-header__title'>{order.checkout}</span>
                     <span className='order-header__date'>{order.date} from {order.shop.name}</span>
-                    <StatusLabel payment addClass={'order-header__payment'}>{order.payment}</StatusLabel>
+                    <StatusLabel payment addClass={'order-header__payment'}>{order.payment.name}</StatusLabel>
                     <StatusLabel fulfillment={order.fulfillment}>{order.fulfillment.name}</StatusLabel>
                   </div>
                   <div className='order-header__link-wrapper'>
@@ -79,7 +79,20 @@ function Order() {
                           <Button fill>Create shipping label</Button>
                         </div>
                       </div>
-                      <div className='main-content__wrapper order-payment'></div>
+                      <div className='main-content__wrapper order-payment'>
+                        <div className='order-payment__top-wrapper'>
+                          <StatusIcon payment={order.payment}>{order.payment.name}</StatusIcon>
+                        </div>
+                        <Table tableType={'order-payment'}>
+                          <tbody>
+                          <TableRow>
+                            <TableData></TableData>
+                            <TableData></TableData>
+                            <TableData></TableData>
+                          </TableRow>
+                          </tbody>
+                        </Table>
+                      </div>
                     </div>
                     <div className='order-customer'>
                       <h3 className='order-customer__title'>Customer</h3>
