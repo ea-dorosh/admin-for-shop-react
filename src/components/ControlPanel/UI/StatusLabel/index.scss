@@ -3,7 +3,6 @@
   display: inline-block;
   vertical-align: middle;
   padding: 8px 18px 8px 26px;
-  background: transparent;
   border-radius: 14px;
   font-family: Roboto, sans-serif;
   font-style: normal;
@@ -11,6 +10,7 @@
   font-size: 12px;
   line-height: 10px;
   color: #333333;
+  background: #EEEEEE;
 
   &::before {
     content: '';
@@ -19,11 +19,30 @@
     height: 10px;
     left: 10px;
     top: 8px;
+    background: #555555;
     border-radius: 21px;
   }
 }
 
 .fulfillment {
+  &--0 {
+    background: #9CC5A9;
+
+    &::before {
+      background: #086D28;
+    }
+  }
+
+  &--1 {
+    background: #FBE19D;
+
+    &::before {
+      background: #F9C43C;
+    }
+  }
+}
+
+.fulfillment-all-orders {
   &--0 {
     background: #EEEEEE;
 
@@ -39,13 +58,31 @@
       background: #F9C43C;
     }
   }
+}
 
-  &--2 {
-    background: #EEEEEE;
+.refunding {
+  &--1 {
+    background: #fbe19d;
 
     &::before {
-      background: #555555;
+      background: #F9C43C;
     }
+  }
+
+  &--2 {
+    background: #fbce9d;
+
+    &::before {
+      background: #f9ad3c;
+    }
+  }
+}
+
+.refunding-all-orders {
+  background: #EEEEEE;
+
+  &::before {
+    background: #555555;
   }
 }
 
@@ -55,4 +92,12 @@
   &::before {
     background: #555555;
   }
+}
+
+.margin-left {
+  margin-left: 20px;
+}
+
+.margin-right {
+  margin-right: 20px;
 }

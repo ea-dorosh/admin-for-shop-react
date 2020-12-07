@@ -1,0 +1,29 @@
+.card-info-title {
+  margin-bottom: 10px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+
+  &--bold {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+.card-info-block {
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  padding: 20px;
+  border-bottom: 1px solid #EEEEEE;
+
+  &:last-child {
+    border: 0;
+  }
+}
+
+.detail-button-wrapper {
+  position: absolute;
+  right: 20px;
+  top: 22px;
+}

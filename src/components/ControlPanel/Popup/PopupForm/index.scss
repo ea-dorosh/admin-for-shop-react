@@ -1,0 +1,12 @@
+.popup-form {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: -20px;
+
+  label,
+  .select,
+  .select-box {
+    margin-bottom: 20px;
+  }
+}

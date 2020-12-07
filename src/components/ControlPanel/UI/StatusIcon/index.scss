@@ -41,21 +41,21 @@
     }
   }
 
-  &.icon-fulfillment--2 {
-    &::before {
-      background-color: #EEEEEE;
-    }
-  }
-
-  &.icon-payment--0 {
+  &.icon-payment {
     &::before {
       background-color: #086D28;
     }
   }
 
-  &.icon-payment--1 {
+  &.icon-refunded--0 {
     &::before {
-      background-color: #FCF444;
+      background-color: #F9C43C;
+    }
+  }
+
+  &.icon-refunded--1 {
+    &::before {
+      background-color: #f93c3c;
     }
   }
 }

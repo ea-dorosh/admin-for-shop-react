@@ -1,8 +1,11 @@
 {
   "shops": [
     {
-      "name": "AVS1",
-      "type": "Shop",
+      "shop": {
+        "name": "AVS1",
+        "type": "offline",
+        "value": "Shop"
+      },
       "city": "Austin",
       "tel": "720-815-5550",
       "inventory": 872,
@@ -18,8 +21,11 @@
       ]
     },
     {
-      "name": "AVS2",
-      "type": "Shop",
+      "shop": {
+        "name": "AVS2",
+        "type": "offline",
+        "value": "Shop"
+      },
       "city": "Austin",
       "tel": "720-815-5550",
       "inventory": 261,
@@ -35,8 +41,11 @@
       ]
     },
     {
-      "name": "AVS3",
-      "type": "Shop",
+      "shop": {
+        "name": "AVS3",
+        "type": "offline",
+        "value": "Shop"
+      },
       "city": "Austin",
       "tel": "720-815-5550",
       "inventory": 230,
@@ -52,8 +61,11 @@
       ]
     },
     {
-      "name": "WH1",
-      "type": "Warehouses",
+      "shop": {
+        "name": "WH1",
+        "type": "online",
+        "value": "Warehouses"
+      },
       "city": "Austin",
       "tel": "720-815-5550",
       "inventory": 2840,
@@ -69,127 +81,569 @@
       ]
     }
   ],
-  "orders":
-  [
+  "allOrders": [
     {
-      "shop": {
-        "name": "Online Store",
-        "type": "Warehouses"
-      },
-      "id": 6, 
-      "type": "online",
-      "checkout": "#online_7392",
+      "id": 100,
+      "checkout": "#online_100",
       "date": "Feb24 at 02:30am",
       "customer": "User Name",
-      "payment": {
+      "total": "728.03",
+      "shop": {
+        "name": "WH1",
+        "type": "online",
+        "value": "Warehouses"
+      },
+      "fulfillment": {
+        "id": 1,
+        "name": "Unfulfilled",
+        "code": ""
+      },
+      "refund": {
         "id": 0,
         "name": "Paid"
+      }
+    },
+    {
+      "id": 200,
+      "checkout": "#offline_avs1_200",
+      "date": "Feb24 at 02:30am",
+      "customer": "User Name",
+      "total": "728.03",
+      "shop": {
+        "name": "AVS1",
+        "type": "offline",
+        "value": "Shop"
       },
       "fulfillment": {
         "id": 0,
-        "name": "Fulfilled"
+        "name": "Fulfilled",
+        "code": ""
       },
-      "total": "728.03"
+      "refund": {
+        "id": 0,
+        "name": "Paid"
+      }
     },
     {
-      "shop": {
-        "name": "AVS1",
-        "type": "Shop"
-      },
-      "id": 1,
-      "type": "online",
-      "checkout": "#online_0000",
-      "date": "Feb24 at 02:30am",
+      "id": 300,
+      "checkout": "#offline_avs3_300",
+      "date": "Sep14 at 11:00am",
       "customer": "User Name",
-      "payment": {
-        "id": 1,
-        "name": "Partially refunded"
-      },
-      "fulfillment": {
-        "id": 1,
-        "name": "Unfulfilled"
-      },
-      "total": "700.33"
-    },
-    {
-      "shop": {
-        "name": "AVS2",
-        "type": "Shop"
-      },
-      "id": 2,
-      "type": "online",
-      "checkout": "#online_1111",
-      "date": "Feb24 at 02:30am",
-      "customer": "User Name",
-      "payment": {
-        "id": 1,
-        "name": "Partially refunded"
-      },
-      "fulfillment": {
-        "id": 2,
-        "name": "Partially fulfilled"
-      },
-      "total": "800.03"
-    },
-    {
+      "total": "728.03",
       "shop": {
         "name": "AVS3",
-        "type": "Shop"
-      },
-      "id": 3,
-      "type": "offline",
-      "checkout": "#avs_1111",
-      "date": "Feb24 at 02:30am",
-      "customer": "User Name",
-      "payment": {
-        "id": 2,
-        "name": "Refunded"
-      },
-      "fulfillment": {
-        "id": 2,
-        "name": "Partially fulfilled"
-      },
-      "total": "728.03"
-    },
-    {
-      "shop": {
-        "name": "AVS1",
-        "type": "Shop"
-      },
-      "id": 4,
-      "type": "online",
-      "checkout": "#online_4321",
-      "date": "Feb24 at 02:30am",
-      "customer": "User Name",
-      "payment": {
-        "id": 2,
-        "name": "Refunded"
-      },
-      "fulfillment": {
-        "id": 1,
-        "name": "Unfulfilled"
-      },
-      "total": "800.03"
-    },
-    {
-      "shop": {
-        "name": "AVS1",
-        "type": "Shop"
-      },
-      "id": 5,
-      "type": "online",
-      "checkout": "#avs_1234",
-      "date": "Feb24 at 02:30am",
-      "customer": "User Name",
-      "payment": {
-        "id": 2,
-        "name": "Refunded"
+        "type": "offline",
+        "value": "Shop"
       },
       "fulfillment": {
         "id": 0,
-        "name": "Fulfilled"
+        "name": "Fulfilled",
+        "code": ""
       },
-      "total": "728.03"
+      "refund": {
+        "id": 1,
+        "name": "Partially refunded"
+      }
+    },
+    {
+      "id": 400,
+      "checkout": "#online_400",
+      "date": "Sep14 at 11:00am",
+      "customer": "User Name",
+      "total": "1728.03",
+      "shop": {
+        "name": "WH1",
+        "type": "online",
+        "value": "Warehouses"
+      },
+      "fulfillment": {
+        "id": 0,
+        "name": "Fulfilled",
+        "code": "28343"
+      },
+      "refund": {
+        "id": 2,
+        "name": "Refunded"
+      }
     }
-  ]
+  ],
+  "detailOrderOnlinePaid": {
+    "id": 100,
+    "checkout": "#online_100",
+    "date": "Feb24 at 02:30am",
+    "shop": {
+      "name": "WH1",
+      "type": "online",
+      "value": "Warehouses",
+      "address": {
+        "address": "9401 Address address",
+        "city": "Denver",
+        "state": "CO",
+        "zip": "125652",
+        "country": "Unites States",
+        "tel": "+7 000 000 00 00"
+      }
+    },
+    "customer": {
+      "name": "Richard",
+      "surName": "Hendricks",
+      "email": "hendricks@gmail.com",
+      "tel": "+7 000 000 00 00"
+    },
+    "seller": {
+      "firstName": null,
+      "lastName": null
+    },
+    "payment": {
+      "type": null,
+      "subTotal": "19.25",
+      "discount": "12.00",
+      "tax": "0.00",
+      "total": "107.25"
+    },
+    "fulfillment": {
+      "id": 1,
+      "name": "Unfulfilled",
+      "code": ""
+    },
+    "refund": {
+      "id": 0,
+      "name": "Paid"
+    },
+    "shipping": {
+      "shipping": true,
+      "company": "UPS Ground",
+      "weight": "566 lb",
+      "coast": "100.00",
+      "shippingAddress": {
+        "address": "9401 Address address",
+        "city": "Denver",
+        "state": "CO",
+        "zip": "125652",
+        "country": "Unites States",
+        "tel": "+7 000 000 00 00"
+      },
+      "billingAddress": {
+        "isSame": true,
+        "address": "9401 Address address",
+        "city": "Denver",
+        "state": "CO",
+        "zip": "125652",
+        "country": "Unites States",
+        "tel": "+7 000 000 00 00"
+      },
+      "pickUp": {
+        "status": false,
+        "date": null,
+        "time": null,
+        "shop": {
+          "name": null,
+          "address": null,
+          "city": null,
+          "state": null,
+          "zip": null,
+          "country": null,
+          "tel": null
+        }
+      }
+    },
+    "products": [
+      {
+        "id": 123,
+        "img": "https://austin-vape-and-smoke.directline.company/media/std_page/preview/preview_2_aUn218y.normal.jpg",
+        "title": "7 Daze – Reds Apple Juice ELiquid",
+        "category": "Vape Juices",
+        "price": 2.25,
+        "count": 3,
+        "total": 6.75
+      },
+      {
+        "id": 321,
+        "img": "https://austin-vape-and-smoke.directline.company/media/shop/product/gallery/0000/0052.normal.jpg",
+        "title": "Reds Apple Juice ELiquid",
+        "category": "Vape Juices",
+        "price": 12.50,
+        "count": 1,
+        "total": 12.50
+      }
+    ],
+    "refundOrders": null
+  },
+  "detailOrderOfflineUnfulfilled": {
+    "id": 200,
+    "checkout": "#offline_avs1_200",
+    "date": "Sep14 at 11:00am",
+    "shop": {
+      "name": "AVS1",
+      "type": "offline",
+      "value": "Shop",
+      "address": {
+        "address": "9401 Address address",
+        "city": "Denver",
+        "state": "CO",
+        "zip": "125652",
+        "country": "Unites States",
+        "tel": "+7 000 000 00 00"
+      }
+    },
+    "customer": {
+      "name": "Richard",
+      "surName": "Hendricks",
+      "email": "hendricks@gmail.com",
+      "tel": "+7 000 000 00 00"
+    },
+    "seller": {
+      "firstName": "Derek",
+      "lastName": "Edwards"
+    },
+    "payment": {
+      "type": "Cash",
+      "subTotal": "19.25",
+      "discount": "12.00",
+      "tax": "0.00",
+      "total": "107.25"
+    },
+    "fulfillment": {
+      "id": 0,
+      "name": "Fulfilled",
+      "code": "28343"
+    },
+    "refund": {
+      "id": 0,
+      "name": "Paid"
+    },
+    "shipping": {
+      "shipping": false,
+      "company": null,
+      "weight": null,
+      "coast": null,
+      "shippingAddress": {
+        "address": null,
+        "city": null,
+        "state": null,
+        "zip": null,
+        "country": null,
+        "tel": null
+      },
+      "billingAddress": {
+        "isSame": null,
+        "address": null,
+        "city": null,
+        "state": null,
+        "zip": null,
+        "country": null,
+        "tel": null
+      },
+      "pickUp": {
+        "status": false,
+        "date": null,
+        "time": null,
+        "shop": {
+          "name": null,
+          "address": null,
+          "city": null,
+          "state": null,
+          "zip": null,
+          "country": null,
+          "tel": null
+        }
+      }
+    },
+    "products": [
+      {
+        "id": 123,
+        "img": "https://austin-vape-and-smoke.directline.company/media/std_page/preview/preview_2_aUn218y.normal.jpg",
+        "title": "7 Daze – Reds Apple Juice ELiquid",
+        "category": "Vape Juices",
+        "price": 2.25,
+        "count": 3,
+        "total": 6.75
+      },
+      {
+        "id": 321,
+        "img": "https://austin-vape-and-smoke.directline.company/media/shop/product/gallery/0000/0052.normal.jpg",
+        "title": "Reds Apple Juice ELiquid",
+        "category": "Vape Juices",
+        "price": 12.50,
+        "count": 1,
+        "total": 12.50
+      }
+    ],
+    "refundOrders": [
+      {
+        "status": {
+          "id": 0,
+          "name": "Refunded"
+        },
+        "id": 1231,
+        "subtotal": 2.25,
+        "total": 2.25,
+        "refundProducts": [
+          {
+            "id": 11,
+            "img": "https://austin-vape-and-smoke.directline.company/media/std_page/preview/preview_2_aUn218y.normal.jpg",
+            "title": "7 Daze – Reds Apple Juice ELiquid",
+            "category": "Vape Juices",
+            "price": 2.25,
+            "count": 1,
+            "total": 2.25
+          }
+        ]
+      }
+    ]
+  },
+  "detailOrderOfflineFulfilled": {
+    "id": 300,
+    "checkout": "#offline_avs1_300",
+    "date": "Sep14 at 11:00am",
+    "shop": {
+      "name": "AVS1",
+      "type": "offline",
+      "value": "Shop",
+      "address": {
+        "address": "9401 Address address",
+        "city": "Denver",
+        "state": "CO",
+        "zip": "125652",
+        "country": "Unites States",
+        "tel": "+7 000 000 00 00"
+      }
+    },
+    "customer": {
+      "name": "Richard",
+      "surName": "Hendricks",
+      "email": "hendricks@gmail.com",
+      "tel": "+7 000 000 00 00"
+    },
+    "seller": {
+      "firstName": "Derek",
+      "lastName": "Edwards"
+    },
+    "payment": {
+      "type": "Cash",
+      "subTotal": "19.25",
+      "discount": "12.00",
+      "tax": "0.00",
+      "total": "107.25"
+    },
+    "fulfillment": {
+      "id": 0,
+      "name": "Fulfilled",
+      "code": "28343"
+    },
+    "refund": {
+      "id": 2,
+      "name": "Refunded"
+    },
+    "shipping": {
+      "shipping": false,
+      "company": null,
+      "weight": null,
+      "coast": null,
+      "shippingAddress": {
+        "address": null,
+        "city": null,
+        "state": null,
+        "zip": null,
+        "country": null,
+        "tel": null
+      },
+      "billingAddress": {
+        "isSame": null,
+        "address": null,
+        "city": null,
+        "state": null,
+        "zip": null,
+        "country": null,
+        "tel": null
+      },
+      "pickUp": {
+        "status": false,
+        "date": null,
+        "time": null,
+        "shop": {
+          "name": null,
+          "address": null,
+          "city": null,
+          "state": null,
+          "zip": null,
+          "country": null,
+          "tel": null
+        }
+      }
+    },
+    "products": [
+      {
+        "id": 123,
+        "img": "https://austin-vape-and-smoke.directline.company/media/std_page/preview/preview_2_aUn218y.normal.jpg",
+        "title": "7 Daze – Reds Apple Juice ELiquid",
+        "category": "Vape Juices",
+        "price": 2.25,
+        "count": 3,
+        "total": 6.75
+      },
+      {
+        "id": 321,
+        "img": "https://austin-vape-and-smoke.directline.company/media/shop/product/gallery/0000/0052.normal.jpg",
+        "title": "Reds Apple Juice ELiquid",
+        "category": "Vape Juices",
+        "price": 12.50,
+        "count": 1,
+        "total": 12.50
+      }
+    ],
+    "refundOrders": null
+  },
+  "detailOrderOnlineRefund": {
+    "id": 400,
+    "checkout": "#online_400",
+    "date": "Sep14 at 11:00am",
+    "shop": {
+      "name": "WH1",
+      "type": "online",
+      "value": "Warehouses",
+      "address": {
+        "address": "9401 Address address",
+        "city": "Denver",
+        "state": "CO",
+        "zip": "125652",
+        "country": "Unites States",
+        "tel": "+7 000 000 00 00"
+      }
+    },
+    "customer": {
+      "name": "Richard",
+      "surName": "Hendricks",
+      "email": "hendricks@gmail.com",
+      "tel": "+7 000 000 00 00"
+    },
+    "seller": {
+      "firstName": null,
+      "lastName": null
+    },
+    "payment": {
+      "type": null,
+      "subTotal": "19.25",
+      "discount": "12.00",
+      "tax": "0.00",
+      "total": "107.25"
+    },
+    "fulfillment": {
+      "id": 0,
+      "name": "Fulfilled",
+      "code": "28343"
+    },
+    "refund": {
+      "id": 2,
+      "name": "Refunded"
+    },
+    "shipping": {
+      "shipping": false,
+      "company": null,
+      "weight": null,
+      "coast": null,
+      "shippingAddress": {
+        "address": null,
+        "city": null,
+        "state": null,
+        "zip": null,
+        "country": null,
+        "tel": null
+      },
+      "billingAddress": {
+        "isSame": null,
+        "address": null,
+        "city": null,
+        "state": null,
+        "zip": null,
+        "country": null,
+        "tel": null
+      },
+      "pickUp": {
+        "status": true,
+        "date": "15 Jule 2020",
+        "time": "15:30",
+        "shop": {
+          "name": "AVS2",
+          "address": "9999 Address address",
+          "city": "Denver",
+          "state": "CO",
+          "zip": "125652",
+          "country": "Unites States",
+          "tel": "+7 888 888 88 88"
+        }
+      }
+    },
+    "products": [
+      {
+        "id": 123,
+        "img": "https://austin-vape-and-smoke.directline.company/media/std_page/preview/preview_2_aUn218y.normal.jpg",
+        "title": "7 Daze – Reds Apple Juice ELiquid",
+        "category": "Vape Juices",
+        "price": 2.25,
+        "count": 3,
+        "total": 6.75
+      },
+      {
+        "id": 321,
+        "img": "https://austin-vape-and-smoke.directline.company/media/shop/product/gallery/0000/0052.normal.jpg",
+        "title": "Reds Apple Juice ELiquid",
+        "category": "Vape Juices",
+        "price": 12.50,
+        "count": 1,
+        "total": 12.50
+      }
+    ],
+    "refundOrders": [
+      {
+        "status": {
+          "id": 0,
+          "name": "Partially refunded"
+        },
+        "id": 1231,
+        "subtotal": 2.25,
+        "total": 2.25,
+        "refundProducts": [
+          {
+            "id": 11,
+            "img": "https://austin-vape-and-smoke.directline.company/media/std_page/preview/preview_2_aUn218y.normal.jpg",
+            "title": "7 Daze – Reds Apple Juice ELiquid",
+            "category": "Vape Juices",
+            "price": 2.25,
+            "count": 1,
+            "total": 2.25
+          }
+        ]
+      },
+      {
+        "status": {
+          "id": 0,
+          "name": "Partially refunded"
+        },
+        "id": 123341,
+        "subtotal": 2.25,
+        "total": 2.25,
+        "refundProducts": [
+          {
+            "id": 11,
+            "img": "https://austin-vape-and-smoke.directline.company/media/std_page/preview/preview_2_aUn218y.normal.jpg",
+            "title": "7 Daze – Reds Apple Juice ELiquid",
+            "category": "Vape Juices",
+            "price": 2.25,
+            "count": 1,
+            "total": 2.25
+          },
+          {
+            "id": 1211,
+            "img": "https://austin-vape-and-smoke.directline.company/media/std_page/preview/preview_2_aUn218y.normal.jpg",
+            "title": "7 Daze – Reds Apple Juice ELiquid",
+            "category": "Vape Juices",
+            "price": 2.25,
+            "count": 2,
+            "total": 4.50
+          }
+        ]
+      }
+    ]
+  }
 }

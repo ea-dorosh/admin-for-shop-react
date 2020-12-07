@@ -1,20 +1,20 @@
-import React from 'react'
-import 'components/ControlPanel/UI/StatusLabel/index.scss'
-
+import React from 'react';
+import './index.scss';
 
 function StatusLabel(props) {
-
-  const {payment, fulfillment, addClass} = props;
+  const {fulfillment, fulfillmentAllOrders, addClass, refunding, refundingAllOrders} = props;
 
   return (
-      <span
-          className={`status-label
-              ${payment ? `payment` : ''}
+    <span
+      className={`status-label
               ${fulfillment ? `fulfillment fulfillment--${fulfillment.id}` : ''}
-              ${addClass}
+              ${fulfillmentAllOrders ? `fulfillment-all-orders fulfillment-all-orders--${fulfillmentAllOrders.id}` : ''}
+              ${refunding ? `refunding refunding--${refunding.id}` : ''}
+              ${refundingAllOrders ? 'refunding-all-orders' : ''}
+              ${addClass ? addClass : ''}
              `}>
-              {props.children}
-      </span>
+      {props.children}
+    </span>
   );
 }
 

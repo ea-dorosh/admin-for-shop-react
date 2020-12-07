@@ -45,6 +45,34 @@
   &:nth-child(2) {
     width: 380px;
   }
+  &:last-child {
+    text-align: right;
+  }
+}
+
+.order-payment .table__data {
+  padding-top: 8px;
+  padding-bottom: 7px;
+  border: 0;
+
+  &:first-child {
+    padding-right: 50px;
+  }
+
+  &:last-child {
+    text-align: right;
+  }
+
+  &:nth-child(2) {
+    width: 100%;
+  }
+
+
+}
+
+.order-payment tr:last-child .table__data {
+  border-top: 1px solid #DDDDDD;
+  padding-top: 20px;
 }
 
 

@@ -1,0 +1,45 @@
+.order-refund__top-wrapper {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.order-refund__text {
+  margin-left: 10px;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 22px;
+  color: #333333;
+}
+
+.order-refund__result {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+
+.order-refund__result-wrapper {
+  margin-left: 20px;
+  min-width: 80px;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: right;
+  color: #333333;
+}
+
+.order-refund__result-text {
+  display: block;
+  margin-bottom: 13px;
+
+  &.total {
+    font-weight: 500;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

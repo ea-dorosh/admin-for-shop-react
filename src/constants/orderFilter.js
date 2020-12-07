@@ -4,7 +4,7 @@ export const OrderFilterStatusTypes = {
   OFFLINE: 'Offline',
 };
 
-export const OrderFilterPaymentTypes = {
+export const OrderFilterRefundTypes = {
   ALL: 'All',
   PAID: 'Paid',
   PARTLY_REFUNDED: 'Partially refunded',
@@ -15,5 +15,18 @@ export const OrderFilterFulfillmentTypes = {
   ALL: 'All',
   FULFILLED: 'Fulfilled',
   UNFULFILLED: 'Unfulfilled',
-  PARTLY_FULFILLED: 'Partly fulfilled',
 };
+
+
+// fulfillment types
+// id: 0 Fulfilled
+// id: 1 Unfulfilled
+
+// refund types
+// id: 0 Not refunded
+// id: 1 Partially refunded
+// id: 2 Refunded
+
+// refundOrder types
+// id: 0 Partially refunded
+// id: 1 Refunded

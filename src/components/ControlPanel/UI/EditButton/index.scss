@@ -1,0 +1,19 @@
+.edit-button {
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  background-color: transparent;
+  font-size: 14px;
+  line-height: 22px;
+  color: #2771FF;
+  border: 0;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    opacity: .7;
+  }
+}

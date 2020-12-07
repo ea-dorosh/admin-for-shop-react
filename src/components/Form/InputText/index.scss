@@ -1,9 +1,13 @@
-.input-label {
+.input-box {
   max-width: 100%;
+  color: #333333;
+}
+
+.input-label {
+  display: block;
   margin-bottom: 3px;
   font-size: 14px;
   line-height: 22px;
-  color: #333333;
 }
 
 .input-text {
@@ -15,9 +19,10 @@
   line-height: 16px;
   color: #333333;
   border: 1px solid #EBEBEB;
+  transition: border-color .2s ease;
 
-  &:focus {
+  &:focus, &:hover {
     outline: none;
-    border: 1px solid #000000;
+    border: 1px solid #428bff;
   }
 }

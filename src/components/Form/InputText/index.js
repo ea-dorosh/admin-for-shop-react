@@ -1,16 +1,15 @@
-import React from "react";
-import "./index.scss"
+import React from 'react';
+import './index.scss';
 
+function InputText(props) {
+  const {labelText, value} = props;
 
-const labelText = 'Label Text';
-
-function InputText() {
-    return (
-        <label className={'input-label'}>
-            {labelText}
-            <input className={'input-text'}/>
-        </label>
-    );
+  return (
+    <label className={'input-box'}>
+      <span className='input-label'>{labelText}</span>
+      <input className='input-text' defaultValue={value} />
+    </label>
+  );
 }
 
 export default InputText;

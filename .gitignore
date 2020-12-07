@@ -21,3 +21,35 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# OS or Editor folders
+Thumbs.db
+.idea
+*.orig
+
+#Vagrant
+.vagrant
+Vagrantfile
+
+#Development configuration
+dev.py
+/backup
+/media
+/static
+/logs
+/venv
+/.venv
+
+#Python
+__pycache__
+*.pyc
+
+# NodeJS
+/node_modules
+
+#Data
+celerybeat*
+SxGeoCity.dat
+
+# Docker Compose data files
+compose

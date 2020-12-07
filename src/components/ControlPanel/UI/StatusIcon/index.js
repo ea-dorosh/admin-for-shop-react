@@ -1,17 +1,18 @@
-import React from 'react'
-import 'components/ControlPanel/UI/StatusIcon/index.scss'
-
+import React from 'react';
+import './index.scss';
 
 function StatusIcon(props) {
-
-  const {fulfillment, payment} = props;
+  const {fulfillment, payment, refunding} = props;
 
   return (
-      <span className={`status-icon
+    <span
+      className={`status-icon
       ${fulfillment ? `icon-fulfillment--${fulfillment.id}` : ''}
-      ${payment ? `icon-payment--${payment.id}` : ''}`}>
-              {props.children}
-      </span>
+      ${payment ? 'icon-payment' : ''}
+      ${refunding ? `icon-refunded--${refunding.id}` : ''}
+      `}>
+      {props.children}
+    </span>
   );
 }
 
