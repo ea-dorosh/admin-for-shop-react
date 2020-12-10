@@ -6,43 +6,66 @@ import {useDispatch, useSelector} from 'react-redux';
 import {closePopup} from 'actions/actions';
 import InputText from 'components/Form/InputText';
 import {COUNTRIES} from 'constants/countries';
-import InputCheckbox from 'components/Form/InputCheckbox';
 import SelectComponent from 'components/Form/Select';
 import PopupForm from 'components/ControlPanel/Popup/PopupForm';
+import {Field, Form, Formik} from 'formik';
+import {getBillingAddress} from 'reducer/orders/selector';
 
 function PopupBillingAddress() {
   const dispatch = useDispatch();
-  const order = useSelector((state) => state.orders.orderInfo);
+  const billingAddress = useSelector((state) => getBillingAddress(state));
+
+  function handleSubmit(values, {setSubmitting}) {
+    dispatch(closePopup());
+    setTimeout(() => {
+      alert(JSON.stringify(values, null, 2));
+      setSubmitting(false);
+    }, 400);
+  }
 
   return (
-    <Popup
-      title='Edit billing address'
-      firstButton={
-        <Button marginRight handler={() => dispatch(closePopup())}>
-          Cancel
-        </Button>
-      }
-      secondButton={<Button fill>Save</Button>}
-      closeBtnHandler={() => dispatch(closePopup())}
-      width={654}>
-      <div className='popup__content'>
-        <div className='checkbox-wrapper'>
-          <InputCheckbox labelText='Same as shipping address' />
-        </div>
-        <PopupForm>
-          <InputText labelText='First Name' value={order.customer.name} />
-          <InputText labelText='Last Name' value={order.customer.surName} />
-          <InputText labelText='Company' value={order.shipping.company} />
-          <InputText labelText='Phone number' value={order.customer.tel} />
-          <InputText labelText='Address' value={order.shipping.shippingAddress.address} />
-          <InputText labelText='Apartment, suite, etc. (optional)' />
-          <InputText labelText='City' value={order.shipping.shippingAddress.city} />
-          <SelectComponent options={COUNTRIES} label='Country/Region' defaultValue={COUNTRIES[0]} />
-          <InputText labelText='State' value={order.shipping.shippingAddress.state} />
-          <InputText labelText='ZIP/Postal code' value={order.shipping.shippingAddress.zip} />
-        </PopupForm>
-      </div>
-    </Popup>
+    <Formik
+      initialValues={billingAddress}
+      // onSubmit={(values, {setSubmitting}) => {
+      //   dispatch(closePopup());
+      //   setTimeout(() => {
+      //     alert(JSON.stringify(values, null, 2));
+      //     setSubmitting(false);
+      //   }, 400);
+      // }}
+      onSubmit={handleSubmit}>
+      <Form>
+        <Popup
+          title='Edit billing address'
+          firstButton={
+            <Button marginRight handler={() => dispatch(closePopup())}>
+              Cancel
+            </Button>
+          }
+          secondButton={
+            <Button fill type='submit'>
+              Save
+            </Button>
+          }
+          closeBtnHandler={() => dispatch(closePopup())}
+          width={654}>
+          <div className='popup__content'>
+            <PopupForm>
+              <Field name='name' component={InputText} labelText='First Name' />
+              <Field name='surName' component={InputText} labelText='Last Name' />
+              <Field name='company' component={InputText} labelText='Company' />
+              <Field name='tel' component={InputText} labelText='Phone number' />
+              <Field name='address' component={InputText} labelText='Address' />
+              <Field name='apartment' component={InputText} labelText='Apartment, suite, etc. (optional)' />
+              <Field name='city' component={InputText} labelText='City' />
+              <Field name='country' component={SelectComponent} labelText='Country/Region' options={COUNTRIES} />
+              <Field name='state' component={InputText} labelText='State' />
+              <Field name='zip' component={InputText} labelText='ZIP/Postal code' />
+            </PopupForm>
+          </div>
+        </Popup>
+      </Form>
+    </Formik>
   );
 }
 

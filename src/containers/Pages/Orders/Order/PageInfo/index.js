@@ -4,9 +4,13 @@ import CardInfo from 'components/ControlPanel/Page/CardInfo';
 import CardCustomer from 'components/ControlPanel/Page/CardInfo/CardCustomer';
 import {useDispatch, useSelector} from 'react-redux';
 import {showPopup} from 'actions/actions';
+import {getBillingAddress, getShippingAddress, getOrder, getPickUpData} from 'reducer/orders/selector';
 
 function PageInfo() {
-  const order = useSelector((state) => state.orders.orderInfo);
+  const order = useSelector((state) => getOrder(state));
+  const billingAddress = useSelector((state) => getBillingAddress(state));
+  const shippingAddress = useSelector((state) => getShippingAddress(state));
+  const pickUpData = useSelector((state) => getPickUpData(state));
   const dispatch = useDispatch();
 
   return (
@@ -17,36 +21,35 @@ function PageInfo() {
         <CardCustomer customer={order.customer} editButtonHandler={() => dispatch(showPopup('PopupEditCustomer'))} />
       )}
       {order.shop.type === 'online' ? (
-        order.shipping.shipping ? (
+        order.deliveryInfo.shipping.status ? (
           <>
-            <CardInfo title='Shipping address' editButtonHandler={() => dispatch(showPopup('PopupShippingAddress'))}>
-              <p>
-                {order.customer.name} {order.customer.surName}
-              </p>
-              <p>{order.shipping.shippingAddress.address}</p>
-              <p>
-                {order.shipping.shippingAddress.city}
-                {order.shipping.shippingAddress.state}
-                {order.shipping.shippingAddress.zip}
-              </p>
-              <p>{order.shipping.shippingAddress.country}</p>
-              <p>{order.shipping.tel}</p>
-            </CardInfo>
             <CardInfo title='Billing address' editButtonHandler={() => dispatch(showPopup('PopupBillingAddress'))}>
-              {order.shipping.billingAddress.isSame ? (
-                <p>Same as shipping address</p>
+              <p>
+                {billingAddress.name} {billingAddress.surName}
+              </p>
+              {billingAddress.company && <p>{billingAddress.company}</p>}
+              <p>{billingAddress.address}</p>
+              <p>
+                {billingAddress.city} {billingAddress.state} {billingAddress.zip}
+              </p>
+              <p>{billingAddress.country.value}</p>
+              <p>{billingAddress.tel}</p>
+            </CardInfo>
+            <CardInfo title='Shipping address' editButtonHandler={() => dispatch(showPopup('PopupShippingAddress'))}>
+              {shippingAddress.isSame ? (
+                <p>Same as billing address</p>
               ) : (
                 <>
                   <p>
-                    {order.customer.name} {order.customer.surName}
+                    {shippingAddress.name} {shippingAddress.surName}
                   </p>
-                  <p>{order.shipping.billingAddress.address}</p>
+                  {shippingAddress.company && <p>{shippingAddress.company}</p>}
+                  <p>{shippingAddress.address}</p>
                   <p>
-                    {order.shipping.billingAddress.city} {order.shipping.billingAddress.state}{' '}
-                    {order.shipping.billingAddress.zip}
+                    {shippingAddress.city} {shippingAddress.state} {shippingAddress.zip}
                   </p>
-                  <p>{order.shipping.billingAddress.country}</p>
-                  <p>{order.shipping.billingAddress.tel}</p>
+                  <p>{shippingAddress.country.value}</p>
+                  <p>{shippingAddress.tel}</p>
                 </>
               )}
             </CardInfo>
@@ -54,17 +57,17 @@ function PageInfo() {
         ) : (
           <>
             <CardInfo title='Shipping address' editButtonHandler={() => dispatch(showPopup('PopupPickupAddress'))}>
-              <p>{order.shipping.pickUp.shop.name}</p>
-              <p>{order.shipping.pickUp.shop.address}</p>
+              <p>{pickUpData.shop.name}</p>
+              <p>{pickUpData.shop.address}</p>
               <p>
-                {order.shipping.pickUp.shop.city} {order.shipping.pickUp.shop.state} {order.shipping.pickUp.shop.zip}
+                {pickUpData.shop.city} {pickUpData.shop.state} {pickUpData.shop.zip}
               </p>
-              <p>{order.shipping.pickUp.country}</p>
-              <p>{order.shipping.pickUp.tel}</p>
+              <p>{pickUpData.shop.country}</p>
+              <p>{pickUpData.shop.tel}</p>
             </CardInfo>
             <CardInfo title='Time of issue' editButtonHandler={() => dispatch(showPopup('PopupTimeOfIssue'))}>
-              <p>{order.shipping.pickUp.date}</p>
-              <p>{order.shipping.pickUp.time}</p>
+              <p>{pickUpData.date}</p>
+              <p>{pickUpData.time}</p>
             </CardInfo>
           </>
         )

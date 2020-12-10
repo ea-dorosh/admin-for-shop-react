@@ -210,27 +210,45 @@
       "id": 0,
       "name": "Paid"
     },
-    "shipping": {
-      "shipping": true,
-      "company": "UPS Ground",
-      "weight": "566 lb",
-      "coast": "100.00",
-      "shippingAddress": {
-        "address": "9401 Address address",
-        "city": "Denver",
-        "state": "CO",
-        "zip": "125652",
-        "country": "Unites States",
-        "tel": "+7 000 000 00 00"
-      },
-      "billingAddress": {
-        "isSame": true,
-        "address": "9401 Address address",
-        "city": "Denver",
-        "state": "CO",
-        "zip": "125652",
-        "country": "Unites States",
-        "tel": "+7 000 000 00 00"
+    "deliveryInfo": {
+      "shipping": {
+        "status": true,
+        "company": "UPS Ground",
+        "weight": "566 lb",
+        "coast": "100.00",
+        "billingAddress": {
+          "name": "Richard",
+          "surName": "Hendricks",
+          "company": "",
+          "address": "9401 Address address",
+          "apartment": "",
+          "city": "Denver",
+          "state": "CO",
+          "zip": "125652",
+          "country": {
+            "id": 0,
+            "value": "United States",
+            "label": "United States"
+          },
+          "tel": "+7 000 000 00 00"
+        },
+        "shippingAddress": {
+          "isSame": true,
+          "name": "Richard",
+          "surName": "Hendricks",
+          "company": "",
+          "address": "9401 Address address",
+          "apartment": "",
+          "city": "Denver",
+          "state": "CO",
+          "zip": "125652",
+          "country": {
+            "id": 0,
+            "value": "United States",
+            "label": "United States"
+          },
+          "tel": "+7 000 000 00 00"
+        }
       },
       "pickUp": {
         "status": false,
@@ -304,48 +322,59 @@
       "total": "107.25"
     },
     "fulfillment": {
-      "id": 0,
-      "name": "Fulfilled",
-      "code": "28343"
+      "id": 1,
+      "name": "Unfulfilled",
+      "code": ""
     },
     "refund": {
       "id": 0,
       "name": "Paid"
     },
-    "shipping": {
-      "shipping": false,
-      "company": null,
-      "weight": null,
-      "coast": null,
-      "shippingAddress": {
-        "address": null,
-        "city": null,
-        "state": null,
-        "zip": null,
-        "country": null,
-        "tel": null
-      },
-      "billingAddress": {
-        "isSame": null,
-        "address": null,
-        "city": null,
-        "state": null,
-        "zip": null,
-        "country": null,
-        "tel": null
-      },
-      "pickUp": {
+    "deliveryInfo": {
+      "shipping": {
         "status": false,
-        "date": null,
-        "time": null,
-        "shop": {
+        "company": null,
+        "weight": null,
+        "coast": null,
+        "billingAddress": {
           "name": null,
+          "surName": null,
+          "company": null,
+          "address": null,
+          "apartment": null,
+          "city": null,
+          "state": null,
+          "zip": null,
+          "country": null,
+          "tel": null
+        },
+        "shippingAddress": {
+          "isSame": true,
+          "name": null,
+          "surName": null,
+          "company": null,
           "address": null,
           "city": null,
           "state": null,
           "zip": null,
           "country": null,
           "tel": null
+        }
+      },
+      "pickUp": {
+        "status": false,
+        "date": null,
+        "time": null,
+        "shop": {
+          "name": "AVS1",
+          "address": {
+            "address": "9401 Address address",
+            "city": "Denver",
+            "state": "CO",
+            "zip": "125652",
+            "country": "Unites States",
+            "tel": "+7 000 000 00 00"
+          }
         }
       }
     },
@@ -432,30 +461,38 @@
       "code": "28343"
     },
     "refund": {
-      "id": 2,
-      "name": "Refunded"
+      "id": 0,
+      "name": "Paid"
     },
-    "shipping": {
-      "shipping": false,
-      "company": null,
-      "weight": null,
-      "coast": null,
-      "shippingAddress": {
-        "address": null,
-        "city": null,
-        "state": null,
-        "zip": null,
-        "country": null,
-        "tel": null
-      },
-      "billingAddress": {
-        "isSame": null,
-        "address": null,
-        "city": null,
-        "state": null,
-        "zip": null,
-        "country": null,
-        "tel": null
+    "deliveryInfo": {
+      "shipping": {
+        "status": false,
+        "company": null,
+        "weight": null,
+        "coast": null,
+        "billingAddress": {
+          "name": null,
+          "surName": null,
+          "company": null,
+          "address": null,
+          "apartment": null,
+          "city": null,
+          "state": null,
+          "zip": null,
+          "country": null,
+          "tel": null
+        },
+        "shippingAddress": {
+          "isSame": true,
+          "surName": null,
+          "company": null,
+          "address": null,
+          "city": null,
+          "state": null,
+          "zip": null,
+          "country": null,
+          "tel": null
+        }
       },
       "pickUp": {
         "status": false,
@@ -537,27 +574,36 @@
       "id": 2,
       "name": "Refunded"
     },
-    "shipping": {
-      "shipping": false,
-      "company": null,
-      "weight": null,
-      "coast": null,
-      "shippingAddress": {
-        "address": null,
-        "city": null,
-        "state": null,
-        "zip": null,
-        "country": null,
-        "tel": null
-      },
-      "billingAddress": {
-        "isSame": null,
-        "address": null,
-        "city": null,
-        "state": null,
-        "zip": null,
-        "country": null,
-        "tel": null
+    "deliveryInfo": {
+      "shipping": {
+        "status": false,
+        "company": null,
+        "weight": null,
+        "coast": null,
+        "billingAddress": {
+          "name": null,
+          "surName": null,
+          "company": null,
+          "address": null,
+          "apartment": null,
+          "city": null,
+          "state": null,
+          "zip": null,
+          "country": null,
+          "tel": null
+        },
+        "shippingAddress": {
+          "isSame": true,
+          "name": null,
+          "surName": null,
+          "company": null,
+          "address": null,
+          "city": null,
+          "state": null,
+          "zip": null,
+          "country": null,
+          "tel": null
+        }
       },
       "pickUp": {
         "status": true,

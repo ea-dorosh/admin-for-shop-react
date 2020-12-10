@@ -17,7 +17,6 @@ export const OrderFilterFulfillmentTypes = {
   UNFULFILLED: 'Unfulfilled',
 };
 
-
 // fulfillment types
 // id: 0 Fulfilled
 // id: 1 Unfulfilled

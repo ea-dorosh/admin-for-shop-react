@@ -1,13 +1,21 @@
 import React from 'react';
 import './index.scss';
 
-function InputText(props) {
-  const {labelText, value} = props;
-
+function InputText({labelText, field, form, handleCheckbox, ...props}) {
   return (
     <label className={'input-box'}>
       <span className='input-label'>{labelText}</span>
-      <input className='input-text' defaultValue={value} />
+      <input
+        className='input-text'
+        {...field}
+        {...props}
+        onChange={(evt) => {
+          if (handleCheckbox) {
+            handleCheckbox(form);
+          }
+          form.handleChange(evt);
+        }}
+      />
     </label>
   );
 }

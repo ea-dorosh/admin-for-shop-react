@@ -46,7 +46,7 @@ function OrderDetails() {
       </Table>
       {order.fulfillment.id === 1 && (
         <div className='order-fulfillment__bottom-wrapper'>
-          {order.shipping && order.shipping.shipping ? (
+          {order.deliveryInfo && order.deliveryInfo.shipping.status ? (
             <>
               <Button marginRight handler={() => dispatch(showPopup('PopupFulfillment'))}>
                 Mark as fulfilled

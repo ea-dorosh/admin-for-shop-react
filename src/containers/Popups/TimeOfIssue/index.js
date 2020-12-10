@@ -5,10 +5,11 @@ import Button from 'components/ControlPanel/UI/Button';
 import InputText from 'components/Form/InputText';
 import {closePopup} from 'actions/actions';
 import PopupForm from 'components/ControlPanel/Popup/PopupForm';
+import {getPickUpData} from 'reducer/orders/selector';
 
 function PopupTimeOfIssue() {
   const dispatch = useDispatch();
-  const pickup = useSelector((state) => state.orders.orderInfo.shipping.pickUp);
+  const pickUpData = useSelector((state) => getPickUpData(state));
 
   return (
     <Popup
@@ -23,8 +24,8 @@ function PopupTimeOfIssue() {
       width={654}>
       <div className='popup__content'>
         <PopupForm>
-          <InputText labelText='Date' value={pickup.date} />
-          <InputText labelText='Time' value={pickup.time} />
+          <InputText labelText='Date' value={pickUpData.date} />
+          <InputText labelText='Time' value={pickUpData.time} />
         </PopupForm>
       </div>
     </Popup>

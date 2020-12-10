@@ -6,6 +6,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ### `yarn start`
 ### `json-server --watch db.json --port 3001`
 
+## Before commit fix indents by using prettier command
+### `prettier --write .`
+
 ## Available Scripts
 
 Runs the app in the development mode.\

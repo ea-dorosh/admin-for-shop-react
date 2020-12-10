@@ -8,18 +8,13 @@ import {useSelector} from 'react-redux';
 import StatusLabel from 'components/ControlPanel/UI/StatusLabel';
 
 function OrderPayment() {
-
   const order = useSelector((state) => state.orders.orderInfo);
 
   return (
     <div className='order-payment'>
       <div className='order-payment__top-wrapper'>
         <StatusIcon payment>Paid</StatusIcon>
-        {order.shop.type === 'offline' && (
-          <StatusLabel addClass={'margin-left'}>
-            {order.payment.type}
-          </StatusLabel>
-        )}
+        {order.shop.type === 'offline' && <StatusLabel addClass={'margin-left'}>{order.payment.type}</StatusLabel>}
       </div>
       <Table tableType={'order-payment'}>
         <tbody>
@@ -38,9 +33,9 @@ function OrderPayment() {
             <TableRow>
               <TableData>Shipping</TableData>
               <TableData>
-                {order.shipping.company} ({order.shipping.weight})
+                {order.deliveryInfo.shipping.company} ({order.deliveryInfo.shipping.weight})
               </TableData>
-              <TableData>${order.shipping.coast}</TableData>
+              <TableData>${order.deliveryInfo.shipping.coast}</TableData>
             </TableRow>
           )}
           <TableRow>
