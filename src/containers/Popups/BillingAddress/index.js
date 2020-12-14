@@ -3,7 +3,7 @@ import './index.scss';
 import Popup from 'components/ControlPanel/Popup';
 import Button from 'components/ControlPanel/UI/Button';
 import {useDispatch, useSelector} from 'react-redux';
-import {closePopup} from 'actions/actions';
+import {ActionCreator} from 'actions/popups';
 import InputText from 'components/Form/InputText';
 import {COUNTRIES} from 'constants/countries';
 import SelectComponent from 'components/Form/Select';
@@ -16,7 +16,7 @@ function PopupBillingAddress() {
   const billingAddress = useSelector((state) => getBillingAddress(state));
 
   function handleSubmit(values, {setSubmitting}) {
-    dispatch(closePopup());
+    dispatch(ActionCreator.closePopup());
     setTimeout(() => {
       alert(JSON.stringify(values, null, 2));
       setSubmitting(false);
@@ -24,21 +24,12 @@ function PopupBillingAddress() {
   }
 
   return (
-    <Formik
-      initialValues={billingAddress}
-      // onSubmit={(values, {setSubmitting}) => {
-      //   dispatch(closePopup());
-      //   setTimeout(() => {
-      //     alert(JSON.stringify(values, null, 2));
-      //     setSubmitting(false);
-      //   }, 400);
-      // }}
-      onSubmit={handleSubmit}>
+    <Formik initialValues={billingAddress} onSubmit={handleSubmit}>
       <Form>
         <Popup
           title='Edit billing address'
           firstButton={
-            <Button marginRight handler={() => dispatch(closePopup())}>
+            <Button marginRight handler={() => dispatch(ActionCreator.closePopup())}>
               Cancel
             </Button>
           }
@@ -47,7 +38,7 @@ function PopupBillingAddress() {
               Save
             </Button>
           }
-          closeBtnHandler={() => dispatch(closePopup())}
+          closeBtnHandler={() => dispatch(ActionCreator.closePopup())}
           width={654}>
           <div className='popup__content'>
             <PopupForm>

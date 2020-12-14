@@ -16,7 +16,7 @@
         },
         {
           "date": "17.11.2020",
-          "amount": 100.00
+          "amount": 100
         }
       ]
     },
@@ -36,7 +36,7 @@
         },
         {
           "date": "17.11.2020",
-          "amount": 100.00
+          "amount": 100
         }
       ]
     },
@@ -56,7 +56,7 @@
         },
         {
           "date": "17.11.2020",
-          "amount": 100.00
+          "amount": 100
         }
       ]
     },
@@ -72,11 +72,11 @@
       "dailySales": [
         {
           "date": "18.11.2020",
-          "amount": 1115.10
+          "amount": 1115.1
         },
         {
           "date": "17.11.2020",
-          "amount": 100.00
+          "amount": 100
         }
       ]
     }
@@ -172,6 +172,7 @@
     "checkout": "#online_100",
     "date": "Feb24 at 02:30am",
     "shop": {
+      "id": 4,
       "name": "WH1",
       "type": "online",
       "value": "Warehouses",
@@ -255,6 +256,7 @@
         "date": null,
         "time": null,
         "shop": {
+          "id": null,
           "name": null,
           "address": null,
           "city": null,
@@ -280,9 +282,9 @@
         "img": "https://austin-vape-and-smoke.directline.company/media/shop/product/gallery/0000/0052.normal.jpg",
         "title": "Reds Apple Juice ELiquid",
         "category": "Vape Juices",
-        "price": 12.50,
+        "price": 12.5,
         "count": 1,
-        "total": 12.50
+        "total": 12.5
       }
     ],
     "refundOrders": null
@@ -292,6 +294,7 @@
     "checkout": "#offline_avs1_200",
     "date": "Sep14 at 11:00am",
     "shop": {
+      "id": 1,
       "name": "AVS1",
       "type": "offline",
       "value": "Shop",
@@ -366,6 +369,7 @@
         "date": null,
         "time": null,
         "shop": {
+          "id": 1,
           "name": "AVS1",
           "address": {
             "address": "9401 Address address",
@@ -393,9 +397,9 @@
         "img": "https://austin-vape-and-smoke.directline.company/media/shop/product/gallery/0000/0052.normal.jpg",
         "title": "Reds Apple Juice ELiquid",
         "category": "Vape Juices",
-        "price": 12.50,
+        "price": 12.5,
         "count": 1,
-        "total": 12.50
+        "total": 12.5
       }
     ],
     "refundOrders": [
@@ -426,6 +430,7 @@
     "checkout": "#offline_avs1_300",
     "date": "Sep14 at 11:00am",
     "shop": {
+      "id": 1,
       "name": "AVS1",
       "type": "offline",
       "value": "Shop",
@@ -499,6 +504,7 @@
         "date": null,
         "time": null,
         "shop": {
+          "id": null,
           "name": null,
           "address": null,
           "city": null,
@@ -524,9 +530,9 @@
         "img": "https://austin-vape-and-smoke.directline.company/media/shop/product/gallery/0000/0052.normal.jpg",
         "title": "Reds Apple Juice ELiquid",
         "category": "Vape Juices",
-        "price": 12.50,
+        "price": 12.5,
         "count": 1,
-        "total": 12.50
+        "total": 12.5
       }
     ],
     "refundOrders": null
@@ -536,6 +542,7 @@
     "checkout": "#online_400",
     "date": "Sep14 at 11:00am",
     "shop": {
+      "id": 4,
       "name": "WH1",
       "type": "online",
       "value": "Warehouses",
@@ -610,6 +617,7 @@
         "date": "15 Jule 2020",
         "time": "15:30",
         "shop": {
+          "id": 2,
           "name": "AVS2",
           "address": "9999 Address address",
           "city": "Denver",
@@ -635,9 +643,9 @@
         "img": "https://austin-vape-and-smoke.directline.company/media/shop/product/gallery/0000/0052.normal.jpg",
         "title": "Reds Apple Juice ELiquid",
         "category": "Vape Juices",
-        "price": 12.50,
+        "price": 12.5,
         "count": 1,
-        "total": 12.50
+        "total": 12.5
       }
     ],
     "refundOrders": [
@@ -686,10 +694,61 @@
             "category": "Vape Juices",
             "price": 2.25,
             "count": 2,
-            "total": 4.50
+            "total": 4.5
           }
         ]
       }
     ]
-  }
+  },
+  "allCustomers": [
+    {
+      "id": 1,
+      "firstName": "Richard",
+      "lastName": "Hendricks",
+      "email": "customer@mail.com",
+      "phone": "68 767 000 56 88"
+    },
+    {
+      "id": 2,
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "customer@mail.com",
+      "phone": "68 767 000 56 88"
+    },
+    {
+      "id": 3,
+      "firstName": "Erlich",
+      "lastName": "Bachman",
+      "email": "customer@mail.com",
+      "phone": "68 767 000 56 88"
+    },
+    {
+      "firstName": "Stephen",
+      "lastName": "Giles",
+      "email": "sepofaha@fahixavimu.com",
+      "phone": "+1 (259) 527-2989",
+      "id": 4
+    },
+    {
+      "firstName": "Jonah",
+      "lastName": "Mcdaniel",
+      "email": "hyqihatok@kopymeke.com",
+      "phone": "+1 (573) 627-9567",
+      "id": 5
+    },
+    {
+      "firstName": "Hamilton",
+      "lastName": "Bush",
+      "email": "cuwimix@vuzal.com",
+      "phone": "+1 (301) 735-1137",
+      "id": 6
+    },
+    {
+      "firstName": "Hadley",
+      "lastName": "Riggs",
+      "email": "quxexokod@gesegu.com",
+      "phone": "+1 (304) 389-1076",
+      "id": 7
+    }
+  ]
 }

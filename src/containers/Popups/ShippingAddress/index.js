@@ -2,7 +2,7 @@ import React from 'react';
 import Popup from 'components/ControlPanel/Popup';
 import Button from 'components/ControlPanel/UI/Button';
 import {useDispatch, useSelector} from 'react-redux';
-import {closePopup} from 'actions/actions';
+import {ActionCreator} from 'actions/popups';
 import InputText from 'components/Form/InputText';
 import SelectComponent from 'components/Form/Select';
 import {COUNTRIES} from 'constants/countries';
@@ -25,7 +25,7 @@ function PopupShippingAddress() {
     <Formik
       initialValues={shippingAddress}
       onSubmit={(values, {setSubmitting}) => {
-        dispatch(closePopup());
+        dispatch(ActionCreator.closePopup());
         setTimeout(() => {
           alert(JSON.stringify(values, null, 2));
           setSubmitting(false);
@@ -35,7 +35,7 @@ function PopupShippingAddress() {
         <Popup
           title='Edit shipping address'
           firstButton={
-            <Button marginRight handler={() => dispatch(closePopup())}>
+            <Button marginRight handler={() => dispatch(ActionCreator.closePopup())}>
               Cancel
             </Button>
           }
@@ -44,53 +44,22 @@ function PopupShippingAddress() {
               Save
             </Button>
           }
-          closeBtnHandler={() => dispatch(closePopup())}
+          closeBtnHandler={() => dispatch(ActionCreator.closePopup())}
           width={654}>
           <div className='popup__content'>
             <div className='checkbox-wrapper'>
               <Field name='isSame' component={InputCheckbox} labelText='Same as billing address' resetValues />
             </div>
             <PopupForm>
-              <Field
-                name='name'
-                component={InputText}
-                labelText='First Name'
-                type='ship'
-                handleCheckbox={turnOffCheckBox}
-              />
-              <Field
-                name='surName'
-                component={InputText}
-                labelText='Last Name'
-                type='ship'
-                handleCheckbox={turnOffCheckBox}
-              />
-              <Field
-                name='company'
-                component={InputText}
-                labelText='Company'
-                type='ship'
-                handleCheckbox={turnOffCheckBox}
-              />
-              <Field
-                name='tel'
-                component={InputText}
-                labelText='Phone number'
-                type='ship'
-                handleCheckbox={turnOffCheckBox}
-              />
-              <Field
-                name='address'
-                component={InputText}
-                labelText='Address'
-                type='ship'
-                handleCheckbox={turnOffCheckBox}
-              />
+              <Field name='name' component={InputText} labelText='First Name' handleCheckbox={turnOffCheckBox} />
+              <Field name='surName' component={InputText} labelText='Last Name' handleCheckbox={turnOffCheckBox} />
+              <Field name='company' component={InputText} labelText='Company' handleCheckbox={turnOffCheckBox} />
+              <Field name='tel' component={InputText} labelText='Phone number' handleCheckbox={turnOffCheckBox} />
+              <Field name='address' component={InputText} labelText='Address' handleCheckbox={turnOffCheckBox} />
               <Field
                 name='apartment'
                 component={InputText}
                 labelText='Apartment, suite, etc. (optional)'
-                type='ship'
                 handleCheckbox={turnOffCheckBox}
               />
               <Field name='city' component={InputText} labelText='City' type='ship' handleCheckbox={turnOffCheckBox} />
@@ -99,23 +68,10 @@ function PopupShippingAddress() {
                 component={SelectComponent}
                 labelText='Country/Region'
                 options={COUNTRIES}
-                type='ship'
                 handleCheckbox={turnOffCheckBox}
               />
-              <Field
-                name='state'
-                component={InputText}
-                labelText='State'
-                type='ship'
-                handleCheckbox={turnOffCheckBox}
-              />
-              <Field
-                name='zip'
-                component={InputText}
-                labelText='ZIP/Postal code'
-                type='ship'
-                handleCheckbox={turnOffCheckBox}
-              />
+              <Field name='state' component={InputText} labelText='State' handleCheckbox={turnOffCheckBox} />
+              <Field name='zip' component={InputText} labelText='ZIP/Postal code' handleCheckbox={turnOffCheckBox} />
             </PopupForm>
           </div>
         </Popup>

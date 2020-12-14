@@ -3,7 +3,7 @@ import {popupTypes} from 'constants/popupTypes';
 import {useSelector} from 'react-redux';
 
 export default function Popups() {
-  const popup = useSelector((state) => state.popup.popup);
+  const popup = useSelector((state) => state.popup.name);
 
   function createPopup() {
     const PopupComponent = popupTypes[popup];

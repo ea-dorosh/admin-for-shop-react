@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import './index.scss';
 import {useDispatch, useSelector} from 'react-redux';
 import {useHistory} from 'react-router-dom';
-import {fetchOrderInfo} from 'actions/actions';
+import {Operation} from 'actions/orders';
 import Main from 'components/ControlPanel/Main';
 import MainHeader from 'components/ControlPanel/Main/MainHeader';
 import MainContent from 'components/ControlPanel/Main/MainContent';
@@ -18,7 +18,7 @@ function Order() {
   const order = useSelector((state) => state.orders.orderInfo);
 
   useEffect(() => {
-    dispatch(fetchOrderInfo());
+    dispatch(Operation.fetchOrderInfo());
   }, [dispatch]);
 
   return (

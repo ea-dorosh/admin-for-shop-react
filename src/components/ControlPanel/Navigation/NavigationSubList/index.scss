@@ -1,23 +1,6 @@
 .navigation-sub-list {
-  display: flex;
+  display: none;
   flex-direction: column;
   margin-top: 5px;
   margin-bottom: -5px;
-}
-
-.navigation-sub-list__item {
-  margin-bottom: 5px;
-  padding-left: 10px;
-}
-
-.navigation-sub-list__item-link {
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 22px;
-  color: #333333;
-  text-decoration: none;
-
-  &--active {
-    color: #2771FF;
-  }
 }

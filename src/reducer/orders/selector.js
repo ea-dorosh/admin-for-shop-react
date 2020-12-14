@@ -13,3 +13,7 @@ export function getShippingAddress(state) {
 export function getPickUpData(state) {
   return state.orders.orderInfo.deliveryInfo.pickUp;
 }
+
+export function getCustomer(state) {
+  return state.orders.orderInfo.customer;
+}

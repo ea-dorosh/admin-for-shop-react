@@ -7,7 +7,7 @@ import TableData from 'components/ControlPanel/Table/TableData';
 import ImageBox from 'components/ControlPanel/UI/ImageBox';
 import ProductName from 'components/ControlPanel/UI/ProductName';
 import Button from 'components/ControlPanel/UI/Button';
-import {showPopup} from 'actions/actions';
+import {ActionCreator} from 'actions/popups';
 import {useSelector, useDispatch} from 'react-redux';
 import {calculateProductAmount} from 'utils/utils';
 
@@ -48,13 +48,13 @@ function OrderDetails() {
         <div className='order-fulfillment__bottom-wrapper'>
           {order.deliveryInfo && order.deliveryInfo.shipping.status ? (
             <>
-              <Button marginRight handler={() => dispatch(showPopup('PopupFulfillment'))}>
+              <Button marginRight handler={() => dispatch(ActionCreator.showPopup('PopupFulfillment'))}>
                 Mark as fulfilled
               </Button>
               <Button fill>Create shipping label</Button>
             </>
           ) : (
-            <Button handler={() => dispatch(showPopup('PopupFulfillment'))} fill>
+            <Button handler={() => dispatch(ActionCreator.showPopup('PopupFulfillment'))} fill>
               Mark as fulfilled
             </Button>
           )}

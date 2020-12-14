@@ -3,7 +3,7 @@ import './index.scss';
 import Popup from 'components/ControlPanel/Popup';
 import Button from 'components/ControlPanel/UI/Button';
 import {useDispatch, useSelector} from 'react-redux';
-import {closePopup} from 'actions/actions';
+import {ActionCreator} from 'actions/popups';
 
 function PopupFulfillment() {
   const dispatch = useDispatch();
@@ -13,12 +13,12 @@ function PopupFulfillment() {
     <Popup
       title='Mark as fulfilled'
       firstButton={
-        <Button marginRight handler={() => dispatch(closePopup())}>
+        <Button marginRight handler={() => dispatch(ActionCreator.closePopup())}>
           Cancel
         </Button>
       }
       secondButton={<Button fill>Apply</Button>}
-      closeBtnHandler={() => dispatch(closePopup())}>
+      closeBtnHandler={() => dispatch(ActionCreator.closePopup())}>
       <div className='popup__content'>
         <p className='popup-text'>Are you sure you want to Mark as fulfilled for {checkout}</p>
       </div>

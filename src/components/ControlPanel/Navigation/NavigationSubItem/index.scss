@@ -1,0 +1,17 @@
+.navigation-sub-item {
+  margin-bottom: 5px;
+  padding-left: 10px;
+
+  a {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    color: #333333;
+    text-decoration: none;
+  }
+
+  &--active a {
+    color: #2771FF;
+    font-weight: 500;
+  }
+}

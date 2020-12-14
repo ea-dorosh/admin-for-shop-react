@@ -4,6 +4,7 @@ import PopupBillingAddress from 'containers/Popups/BillingAddress';
 import PopupPickupAddress from 'containers/Popups/PickupAddress';
 import PopupTimeOfIssue from 'containers/Popups/TimeOfIssue';
 import PopupEditCustomer from 'containers/Popups/EditCustomer';
+import PopupAddCustomer from 'containers/Popups/AddCustomer';
 
 export const popupTypes = {
   PopupFulfillment: PopupFulfillment,
@@ -12,4 +13,5 @@ export const popupTypes = {
   PopupPickupAddress: PopupPickupAddress,
   PopupTimeOfIssue: PopupTimeOfIssue,
   PopupEditCustomer: PopupEditCustomer,
+  PopupAddCustomer: PopupAddCustomer,
 };

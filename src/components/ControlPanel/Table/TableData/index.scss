@@ -75,6 +75,20 @@
   padding-top: 20px;
 }
 
+.customers .table__data {
+
+  &:first-child {
+    font-weight: bold;
+    padding-left: 40px;
+    color: #083250;
+  }
+
+  &:last-child {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
 
 
 

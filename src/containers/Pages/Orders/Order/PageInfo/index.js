@@ -3,7 +3,7 @@ import './index.scss';
 import CardInfo from 'components/ControlPanel/Page/CardInfo';
 import CardCustomer from 'components/ControlPanel/Page/CardInfo/CardCustomer';
 import {useDispatch, useSelector} from 'react-redux';
-import {showPopup} from 'actions/actions';
+import {ActionCreator} from 'actions/popups';
 import {getBillingAddress, getShippingAddress, getOrder, getPickUpData} from 'reducer/orders/selector';
 
 function PageInfo() {
@@ -18,12 +18,17 @@ function PageInfo() {
       {order.shop.type === 'online' ? (
         <CardCustomer customer={order.customer} />
       ) : (
-        <CardCustomer customer={order.customer} editButtonHandler={() => dispatch(showPopup('PopupEditCustomer'))} />
+        <CardCustomer
+          customer={order.customer}
+          editButtonHandler={() => dispatch(ActionCreator.showPopup('PopupEditCustomer'))}
+        />
       )}
       {order.shop.type === 'online' ? (
         order.deliveryInfo.shipping.status ? (
           <>
-            <CardInfo title='Billing address' editButtonHandler={() => dispatch(showPopup('PopupBillingAddress'))}>
+            <CardInfo
+              title='Billing address'
+              editButtonHandler={() => dispatch(ActionCreator.showPopup('PopupBillingAddress'))}>
               <p>
                 {billingAddress.name} {billingAddress.surName}
               </p>
@@ -35,7 +40,9 @@ function PageInfo() {
               <p>{billingAddress.country.value}</p>
               <p>{billingAddress.tel}</p>
             </CardInfo>
-            <CardInfo title='Shipping address' editButtonHandler={() => dispatch(showPopup('PopupShippingAddress'))}>
+            <CardInfo
+              title='Shipping address'
+              editButtonHandler={() => dispatch(ActionCreator.showPopup('PopupShippingAddress'))}>
               {shippingAddress.isSame ? (
                 <p>Same as billing address</p>
               ) : (
@@ -56,7 +63,9 @@ function PageInfo() {
           </>
         ) : (
           <>
-            <CardInfo title='Shipping address' editButtonHandler={() => dispatch(showPopup('PopupPickupAddress'))}>
+            <CardInfo
+              title='Shipping address'
+              editButtonHandler={() => dispatch(ActionCreator.showPopup('PopupPickupAddress'))}>
               <p>{pickUpData.shop.name}</p>
               <p>{pickUpData.shop.address}</p>
               <p>
@@ -65,7 +74,9 @@ function PageInfo() {
               <p>{pickUpData.shop.country}</p>
               <p>{pickUpData.shop.tel}</p>
             </CardInfo>
-            <CardInfo title='Time of issue' editButtonHandler={() => dispatch(showPopup('PopupTimeOfIssue'))}>
+            <CardInfo
+              title='Time of issue'
+              editButtonHandler={() => dispatch(ActionCreator.showPopup('PopupTimeOfIssue'))}>
               <p>{pickUpData.date}</p>
               <p>{pickUpData.time}</p>
             </CardInfo>

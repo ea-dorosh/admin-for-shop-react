@@ -1,10 +1,10 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import {AppRoutes} from 'constants/app_routes.js';
 import './index.scss';
 import {OrderFilterFulfillmentTypes, OrderFilterRefundTypes, OrderFilterStatusTypes} from 'constants/orderFilter';
-import {fetchOrders, filterOrdersFulfillment, filterOrdersRefund, filterOrdersStatus} from 'actions/actions';
+import {ActionCreator, Operation} from 'actions/orders';
 import Main from 'components/ControlPanel/Main';
 import MainHeader from 'components/ControlPanel/Main/MainHeader';
 import MainContent from 'components/ControlPanel/Main/MainContent';
@@ -27,7 +27,7 @@ function AllOrders() {
   const filterFulfillment = useSelector((state) => state.orders.filterFulfillment);
 
   useEffect(() => {
-    dispatch(fetchOrders());
+    dispatch(Operation.fetchOrders());
   }, [dispatch]);
 
   return (
@@ -41,7 +41,7 @@ function AllOrders() {
             <Tab>
               {Object.values(OrderFilterStatusTypes).map((filter) => (
                 <TabItem
-                  filterHandle={filterOrdersStatus}
+                  filterHandle={ActionCreator.filterOrdersStatus}
                   title={filter}
                   isActive={filterStatus === filter}
                   key={filter}
@@ -53,7 +53,7 @@ function AllOrders() {
             <TabFilter>
               {Object.values(OrderFilterRefundTypes).map((filter) => (
                 <TabFilterItem
-                  filterHandle={filterOrdersRefund}
+                  filterHandle={ActionCreator.filterOrdersRefund}
                   title={filter}
                   key={filter}
                   isActive={filterRefund === filter}
@@ -63,7 +63,7 @@ function AllOrders() {
             <TabFilter>
               {Object.values(OrderFilterFulfillmentTypes).map((filter) => (
                 <TabFilterItem
-                  filterHandle={filterOrdersFulfillment}
+                  filterHandle={ActionCreator.filterOrdersFulfillment}
                   title={filter}
                   key={filter}
                   isActive={filterFulfillment === filter}
@@ -86,7 +86,7 @@ function AllOrders() {
               {allOrders.map((order) => (
                 <TableRow key={order.id}>
                   <TableData>
-                    <Link to={AppRoutes.order(order.id)}>{order.checkout}</Link>
+                    <NavLink to={AppRoutes.order(order.id)}>{order.checkout}</NavLink>
                   </TableData>
                   <TableData>{order.date}</TableData>
                   <TableData>{order.customer}</TableData>

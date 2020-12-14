@@ -2,33 +2,51 @@ import React from 'react';
 import Popup from 'components/ControlPanel/Popup';
 import Button from 'components/ControlPanel/UI/Button';
 import {useDispatch, useSelector} from 'react-redux';
-import {closePopup} from 'actions/actions';
+import {ActionCreator} from 'actions/popups';
 import PopupForm from 'components/ControlPanel/Popup/PopupForm';
 import InputText from 'components/Form/InputText';
+import {getCustomer} from 'reducer/orders/selector';
+import {Field, Form, Formik} from 'formik';
 
 function PopupEditCustomer() {
   const dispatch = useDispatch();
-  const order = useSelector((state) => state.orders.orderInfo);
+  const customer = useSelector((state) => getCustomer(state));
 
   return (
-    <Popup
-      title='Edit Customer'
-      firstButton={
-        <Button marginRight handler={() => dispatch(closePopup())}>
-          Cancel
-        </Button>
-      }
-      secondButton={<Button fill>Save</Button>}
-      closeBtnHandler={() => dispatch(closePopup())}>
-      <div className='popup__content'>
-        <PopupForm>
-          <InputText labelText='First Name' value={order.customer.name} />
-          <InputText labelText='Last Name' value={order.customer.surName} />
-          <InputText labelText='Email' value={order.customer.email} />
-          <InputText labelText='Phone' value={order.customer.tel} />
-        </PopupForm>
-      </div>
-    </Popup>
+    <Formik
+      initialValues={customer}
+      onSubmit={(values, {setSubmitting}) => {
+        dispatch(ActionCreator.closePopup());
+        setTimeout(() => {
+          alert(JSON.stringify(values, null, 2));
+          setSubmitting(false);
+        }, 400);
+      }}>
+      <Form>
+        <Popup
+          title='Edit Customer'
+          firstButton={
+            <Button marginRight handler={() => dispatch(ActionCreator.closePopup())}>
+              Cancel
+            </Button>
+          }
+          secondButton={
+            <Button fill type='submit'>
+              Save
+            </Button>
+          }
+          closeBtnHandler={() => dispatch(ActionCreator.closePopup())}>
+          <div className='popup__content'>
+            <PopupForm>
+              <Field name='name' component={InputText} labelText='First Name' />
+              <Field name='surName' component={InputText} labelText='Last Name' />
+              <Field name='email' component={InputText} labelText='Email' />
+              <Field name='tel' component={InputText} labelText='Phone' />
+            </PopupForm>
+          </div>
+        </Popup>
+      </Form>
+    </Formik>
   );
 }
 

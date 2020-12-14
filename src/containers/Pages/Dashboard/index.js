@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import './index.scss';
-import {fetchShops} from 'actions/actions';
+import {Operation} from 'actions/shops';
 import Main from 'components/ControlPanel/Main';
 import MainHeader from 'components/ControlPanel/Main/MainHeader';
 import SalesWidget from 'components/Pages/Dashboard/SalesWidget';
@@ -17,7 +17,7 @@ function Dashboard() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchShops());
+    dispatch(Operation.fetchShops());
   }, [dispatch]);
 
   const calculateTotal = function () {

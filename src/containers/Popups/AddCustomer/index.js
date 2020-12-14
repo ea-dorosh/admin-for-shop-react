@@ -1,30 +1,32 @@
 import React from 'react';
-import {useDispatch, useSelector} from 'react-redux';
 import Popup from 'components/ControlPanel/Popup';
 import Button from 'components/ControlPanel/UI/Button';
-import InputText from 'components/Form/InputText';
+import {useDispatch} from 'react-redux';
 import {ActionCreator} from 'actions/popups';
+import {Operation} from 'actions/customers';
 import PopupForm from 'components/ControlPanel/Popup/PopupForm';
-import {getPickUpData} from 'reducer/orders/selector';
+import InputText from 'components/Form/InputText';
 import {Field, Form, Formik} from 'formik';
 
-function PopupTimeOfIssue() {
+function PopupAddCustomer() {
   const dispatch = useDispatch();
-  const pickUpData = useSelector((state) => getPickUpData(state));
+  const initialValues = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+  };
 
   return (
     <Formik
-      initialValues={pickUpData}
-      onSubmit={(values, {setSubmitting}) => {
+      initialValues={initialValues}
+      onSubmit={(values) => {
         dispatch(ActionCreator.closePopup());
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
-        }, 400);
+        dispatch(Operation.addCustomer(values));
       }}>
       <Form>
         <Popup
-          title='Time of issue'
+          title='Add Customer'
           firstButton={
             <Button marginRight handler={() => dispatch(ActionCreator.closePopup())}>
               Cancel
@@ -35,12 +37,13 @@ function PopupTimeOfIssue() {
               Save
             </Button>
           }
-          closeBtnHandler={() => dispatch(ActionCreator.closePopup())}
-          width={654}>
+          closeBtnHandler={() => dispatch(ActionCreator.closePopup())}>
           <div className='popup__content'>
             <PopupForm>
-              <Field name='date' component={InputText} labelText='Date' />
-              <Field name='time' component={InputText} labelText='Time' />
+              <Field name='firstName' component={InputText} labelText='First Name' />
+              <Field name='lastName' component={InputText} labelText='Last Name' />
+              <Field name='email' component={InputText} labelText='Email' />
+              <Field name='phone' component={InputText} labelText='Phone' />
             </PopupForm>
           </div>
         </Popup>
@@ -49,4 +52,4 @@ function PopupTimeOfIssue() {
   );
 }
 
-export default PopupTimeOfIssue;
+export default PopupAddCustomer;
