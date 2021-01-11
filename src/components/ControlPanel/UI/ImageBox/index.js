@@ -1,14 +1,17 @@
 import React from 'react';
-import 'components/ControlPanel/UI/ImageBox/index.scss';
+import './index.scss';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
-function ImageBox(props) {
-  const {img} = props;
+const ImageBox = ({img, small}) => (
+  <div className={classNames('image-box', {'image-box--small': small})}>
+    <img src={img} alt='' />
+  </div>
+);
 
-  return (
-    <div className='image-box'>
-      <img src={img} alt='' />
-    </div>
-  );
-}
+ImageBox.propTypes = {
+  img: PropTypes.string.isRequired,
+  small: PropTypes.bool,
+};
 
 export default ImageBox;

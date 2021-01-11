@@ -8,7 +8,7 @@ import {ActionCreator, Operation} from 'actions/orders';
 import Main from 'components/ControlPanel/Main';
 import MainHeader from 'components/ControlPanel/Main/MainHeader';
 import MainContent from 'components/ControlPanel/Main/MainContent';
-import TitleH1 from 'components/Titles/H1';
+import TitleH1 from 'components/Titles/TitleH1';
 import Tab from 'components/ControlPanel/Tab';
 import TabItem from 'components/ControlPanel/Tab/TabItem';
 import TabFilter from 'components/ControlPanel/TabFilter';
@@ -19,7 +19,7 @@ import TableData from 'components/ControlPanel/Table/TableData';
 import TableRow from 'components/ControlPanel/Table/TableRow';
 import StatusLabel from 'components/ControlPanel/UI/StatusLabel';
 
-function AllOrders() {
+const AllOrders = () => {
   const dispatch = useDispatch();
   const allOrders = useSelector((state) => state.orders.orders);
   const filterStatus = useSelector((state) => state.orders.filterStatus);
@@ -86,12 +86,12 @@ function AllOrders() {
               {allOrders.map((order) => (
                 <TableRow key={order.id}>
                   <TableData>
-                    <NavLink to={AppRoutes.order(order.id)}>{order.checkout}</NavLink>
+                    <NavLink to={AppRoutes.ORDERS.order(order.id)}>{order.checkout}</NavLink>
                   </TableData>
                   <TableData>{order.date}</TableData>
                   <TableData>{order.customer}</TableData>
                   <TableData>
-                    <StatusLabel refundingAllOrders>{order.refund.name}</StatusLabel>
+                    <StatusLabel>{order.refund.name}</StatusLabel>
                   </TableData>
                   <TableData>
                     <StatusLabel fulfillmentAllOrders={order.fulfillment}>{order.fulfillment.name}</StatusLabel>
@@ -105,6 +105,6 @@ function AllOrders() {
       </MainContent>
     </Main>
   );
-}
+};
 
 export default AllOrders;

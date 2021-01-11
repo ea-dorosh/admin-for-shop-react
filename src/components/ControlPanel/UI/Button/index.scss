@@ -22,13 +22,6 @@
     color: #FFFFFF;
   }
 
-  &--margin {
-    margin-right: 20px;
-  }
-
-  &--margin-left-auto {
-    margin-left: auto;
-  }
 
   &--fill {
     border: 0;
@@ -40,7 +33,7 @@
     }
   }
 
-  &--secondary {
+  &--gray {
     padding: 9px 20px;
     font-size: 12px;
     color: #555555;
@@ -48,6 +41,17 @@
 
     &:hover {
       background: linear-gradient(234.5deg, #b3b2b2 1.91%, #c3c1c1 100%);
+      border-color: transparent;
+      color: #FFFFFF;
+    }
+  }
+
+  &--red {
+    color: #333333;
+    border: 1px solid #F84444;
+
+    &:hover {
+      background: linear-gradient(234.5deg, #fd2b0e 1.91%, #f37575 100%);
       border-color: transparent;
       color: #FFFFFF;
     }

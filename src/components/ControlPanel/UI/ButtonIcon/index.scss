@@ -1,0 +1,27 @@
+.button-icon {
+  position: relative;
+  padding: 0 0 0 22px;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  font-size: 10px;
+  line-height: 12px;
+  color: #B3B3B3;
+
+  &__img {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    color: #626262;
+  }
+}

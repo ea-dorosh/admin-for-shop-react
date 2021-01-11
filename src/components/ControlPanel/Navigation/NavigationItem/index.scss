@@ -5,21 +5,121 @@
   font-size: 14px;
   line-height: 22px;
 
-  > a {
+  .navigation-item-link {
+    position: relative;
     font-weight: 500;
     font-size: 14px;
     line-height: 22px;
     color: #333333;
     text-decoration: none;
 
+    &::before {
+      content: '';
+      position: absolute;
+      left: -23px;
+      top: -2px;
+      width: 18px;
+      height: 18px;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 1;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: -23px;
+      top: -2px;
+      width: 18px;
+      height: 18px;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0;
+    }
+
+    &.active {
+      color: #2771FF;
+      font-weight: 500;
+
+      &:hover {
+        cursor: default;
+      }
+
+      &::before {
+        opacity: 0;
+      }
+
+      &::after {
+        opacity: 1;
+      }
+    }
+
     &.submenu-active {
       + .navigation-sub-list {
         display: flex;
+
+        .active {
+          color: #2771FF;
+          font-weight: 500;
+        }
+      }
+
+      &::before {
+        opacity: 0;
+      }
+
+      &::after {
+        opacity: 1;
       }
     }
-  }
 
-  .active {
-    color: #2771FF;
+    &:hover {
+      opacity: .7;
+    }
+
+    &.active:hover {
+      cursor: default;
+      opacity: 1;
+    }
+
+    &--dashboard {
+      &::before {
+        background-image: url('../../../../images/dashboard.svg');
+      }
+
+      &::after {
+        background-image: url('../../../../images/dashboard-active.svg');
+      }
+    }
+
+    &--orders {
+      &::before {
+        background-image: url('../../../../images/orders.svg');
+      }
+
+      &::after {
+        background-image: url('../../../../images/orders-active.svg');
+      }
+    }
+
+    &--customers {
+      &::before {
+        background-image: url('../../../../images/customers.svg');
+      }
+
+      &::after {
+        background-image: url('../../../../images/customers-active.svg');
+      }
+    }
+
+    &--products {
+      &::before {
+        background-image: url('../../../../images/products.svg');
+      }
+
+      &::after {
+        background-image: url('../../../../images/products-active.svg');
+      }
+    }
   }
 }

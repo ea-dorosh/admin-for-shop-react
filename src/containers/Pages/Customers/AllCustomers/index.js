@@ -5,20 +5,22 @@ import {Operation} from 'actions/customers';
 import Main from 'components/ControlPanel/Main';
 import MainHeader from 'components/ControlPanel/Main/MainHeader';
 import MainContent from 'components/ControlPanel/Main/MainContent';
-import TitleH1 from 'components/Titles/H1';
+import TitleH1 from 'components/Titles/TitleH1';
 import Button from 'components/ControlPanel/UI/Button';
 import Table from 'components/ControlPanel/Table';
 import TableRow from 'components/ControlPanel/Table/TableRow';
 import TableHead from 'components/ControlPanel/Table/TableHead';
 import TableData from 'components/ControlPanel/Table/TableData';
-import {ActionCreator} from 'actions/popups';
+import {ActionCreator as ActionPopup} from 'actions/popups';
+import {getCustomers} from 'reducer/customers/selector';
 
-function AllCustomers() {
+const AllCustomers = () => {
   const dispatch = useDispatch();
-  const allCustomers = useSelector((state) => state.customers.customers);
+  const allCustomers = useSelector((state) => getCustomers(state));
 
   useEffect(() => {
     dispatch(Operation.fetchCustomers());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -26,7 +28,7 @@ function AllCustomers() {
       <MainHeader>
         <div className='customers-header'>
           <TitleH1 title='All Customers' />
-          <Button fill mlAuto handler={() => dispatch(ActionCreator.showPopup('PopupAddCustomer'))}>
+          <Button fill marginLeft='auto' handler={() => dispatch(ActionPopup.showPopup('PopupAddCustomer'))}>
             Add Customer
           </Button>
         </div>
@@ -51,7 +53,13 @@ function AllCustomers() {
                   <TableData>{customer.email}</TableData>
                   <TableData>{customer.phone}</TableData>
                   <TableData>
-                    <Button secondary>Send SMS or Email</Button>
+                    <Button
+                      color={'gray'}
+                      handler={() => {
+                        dispatch(ActionPopup.showPopup({name: 'PopupSendNotification', data: {id: customer.id}}));
+                      }}>
+                      Send SMS or Email
+                    </Button>
                   </TableData>
                 </TableRow>
               ))}
@@ -61,6 +69,6 @@ function AllCustomers() {
       </MainContent>
     </Main>
   );
-}
+};
 
 export default AllCustomers;

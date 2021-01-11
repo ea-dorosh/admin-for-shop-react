@@ -66,8 +66,6 @@
   &:nth-child(2) {
     width: 100%;
   }
-
-
 }
 
 .order-payment tr:last-child .table__data {
@@ -86,6 +84,25 @@
   &:last-child {
     padding-top: 0;
     padding-bottom: 0;
+  }
+}
+
+.products-inventory .table__data {
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  &:first-child {
+    padding-left: 40px;
+  }
+
+  &:last-child {
+    padding-right: 20px;
+    width: 80px;
+    text-align: right;
+  }
+
+  &:nth-last-child(2) {
+    width: 80px;
   }
 }
 

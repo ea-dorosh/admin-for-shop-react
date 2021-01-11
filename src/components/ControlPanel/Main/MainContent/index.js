@@ -1,8 +1,11 @@
 import React from 'react';
 import './index.scss';
+import PropTypes from 'prop-types';
 
-function MainContent(props) {
-  return <div className={'main-content'}>{props.children}</div>;
-}
+const MainContent = ({children}) => <div className='main-content'>{children}</div>;
 
 export default MainContent;
+
+MainContent.propTypes = {
+  children: PropTypes.node.isRequired,
+};

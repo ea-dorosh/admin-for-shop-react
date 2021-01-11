@@ -5,7 +5,7 @@ import Button from 'components/ControlPanel/UI/Button';
 import {useDispatch, useSelector} from 'react-redux';
 import {ActionCreator} from 'actions/popups';
 
-function PopupFulfillment() {
+const PopupFulfillment = () => {
   const dispatch = useDispatch();
   const checkout = useSelector((state) => state.orders.orderInfo.checkout);
 
@@ -13,17 +13,17 @@ function PopupFulfillment() {
     <Popup
       title='Mark as fulfilled'
       firstButton={
-        <Button marginRight handler={() => dispatch(ActionCreator.closePopup())}>
+        <Button marginRight='20px' handler={() => dispatch(ActionCreator.closePopup())}>
           Cancel
         </Button>
       }
-      secondButton={<Button fill>Apply</Button>}
+      secondButton={<Button fill handler={()=>{}}>Apply</Button>}
       closeBtnHandler={() => dispatch(ActionCreator.closePopup())}>
       <div className='popup__content'>
         <p className='popup-text'>Are you sure you want to Mark as fulfilled for {checkout}</p>
       </div>
     </Popup>
   );
-}
+};
 
 export default PopupFulfillment;

@@ -7,6 +7,11 @@
   border-radius: 5px;
   overflow: hidden;
 
+  &--small {
+    width: 48px;
+    height: 48px;
+  }
+
   img {
     position: absolute;
     max-width: 100%;

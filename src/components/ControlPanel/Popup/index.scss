@@ -1,3 +1,13 @@
+.popup-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+  opacity: .1;
+}
+
 .popup {
   position: fixed;
   top: 50%;
@@ -6,7 +16,7 @@
   width: 768px;
   padding: 20px 30px 30px;
   background: #FFFFFF;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 
   &__close-btn {
     position: absolute;

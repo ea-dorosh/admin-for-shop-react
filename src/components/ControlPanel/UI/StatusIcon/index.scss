@@ -29,31 +29,31 @@
     background-color: #FFFFFF;
   }
 
-  &.icon-fulfillment--0 {
+  &--fulfillment-0 {
     &::before {
       background-color: #086D28;
     }
   }
 
-  &.icon-fulfillment--1 {
+  &--fulfillment-1 {
     &::before {
       background-color: #FCF444;
     }
   }
 
-  &.icon-payment {
+  &--payment {
     &::before {
       background-color: #086D28;
     }
   }
 
-  &.icon-refunded--0 {
+  &--refunded-0 {
     &::before {
       background-color: #F9C43C;
     }
   }
 
-  &.icon-refunded--1 {
+  &--refunded-1 {
     &::before {
       background-color: #f93c3c;
     }

@@ -5,21 +5,22 @@ import NavigationItem from 'components/ControlPanel/Navigation/NavigationItem';
 import NavigationSubList from 'components/ControlPanel/Navigation/NavigationSubList';
 import NavigationSubItem from 'components/ControlPanel/Navigation/NavigationSubItem';
 
-function Customers() {
-  return (
-    <NavigationItem>
-      <NavLink to={AppRoutes.CUSTOMERS.ALL_CUSTOMERS} activeClassName='submenu-active'>
-        Customers
-      </NavLink>
-      <NavigationSubList>
-        <NavigationSubItem>
-          <NavLink to={AppRoutes.CUSTOMERS.ALL_CUSTOMERS} activeClassName='active'>
-            All Customers
-          </NavLink>
-        </NavigationSubItem>
-      </NavigationSubList>
-    </NavigationItem>
-  );
-}
+const Customers = () => (
+  <NavigationItem>
+    <NavLink
+      to={AppRoutes.CUSTOMERS.CUSTOMERS}
+      activeClassName='submenu-active'
+      className='navigation-item-link navigation-item-link--customers'>
+      Customers
+    </NavLink>
+    <NavigationSubList>
+      <NavigationSubItem>
+        <NavLink to={AppRoutes.CUSTOMERS.ALL_CUSTOMERS} activeClassName='active'>
+          All Customers
+        </NavLink>
+      </NavigationSubItem>
+    </NavigationSubList>
+  </NavigationItem>
+);
 
 export default withRouter(Customers);

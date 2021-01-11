@@ -1,4 +1,7 @@
 .main {
+  position: relative;
   grid-column: 2/-1;
   grid-row: 2/2;
+  height: calc(100vh - 87px);
+  overflow-y: auto;
 }

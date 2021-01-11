@@ -33,4 +33,4 @@ const Operation = {
   },
 };
 
-export {Operation};
+export {ActionCreator, Operation};

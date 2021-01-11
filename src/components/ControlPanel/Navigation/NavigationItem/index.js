@@ -1,12 +1,11 @@
 import React from 'react';
 import './index.scss';
+import PropTypes from 'prop-types';
 
-function NavigationItem({children, menuHandler}) {
-  return (
-    <li className={`navigation-item`} onClick={menuHandler}>
-      {children}
-    </li>
-  );
-}
+const NavigationItem = ({children}) => <li className='navigation-item'>{children}</li>;
+
+NavigationItem.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default NavigationItem;

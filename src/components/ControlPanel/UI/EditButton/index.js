@@ -1,14 +1,15 @@
 import React from 'react';
-import 'components/ControlPanel/UI/EditButton/index.scss';
+import './index.scss';
+import PropTypes from 'prop-types';
 
-function EditButton(props) {
-  const {handler} = props;
+const EditButton = ({handler}) => (
+  <button className='edit-button' onClick={handler}>
+    edit
+  </button>
+);
 
-  return (
-    <button className={'edit-button'} onClick={handler}>
-      edit
-    </button>
-  );
-}
+EditButton.propTypes = {
+  handler: PropTypes.func.isRequired,
+};
 
 export default EditButton;

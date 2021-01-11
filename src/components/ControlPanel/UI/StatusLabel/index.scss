@@ -22,10 +22,8 @@
     background: #555555;
     border-radius: 21px;
   }
-}
 
-.fulfillment {
-  &--0 {
+  &--fulfillment-0 {
     background: #9CC5A9;
 
     &::before {
@@ -33,17 +31,15 @@
     }
   }
 
-  &--1 {
+  &--fulfillment-1 {
     background: #FBE19D;
 
     &::before {
       background: #F9C43C;
     }
   }
-}
 
-.fulfillment-all-orders {
-  &--0 {
+  &--fulfillment-all-orders-0 {
     background: #EEEEEE;
 
     &::before {
@@ -51,17 +47,15 @@
     }
   }
 
-  &--1 {
+  &--fulfillment-all-orders-1 {
     background: #FBE19D;
 
     &::before {
       background: #F9C43C;
     }
   }
-}
 
-.refunding {
-  &--1 {
+  &--refunding-1 {
     background: #fbe19d;
 
     &::before {
@@ -69,35 +63,11 @@
     }
   }
 
-  &--2 {
+  &--refunding-2 {
     background: #fbce9d;
 
     &::before {
       background: #f9ad3c;
     }
   }
-}
-
-.refunding-all-orders {
-  background: #EEEEEE;
-
-  &::before {
-    background: #555555;
-  }
-}
-
-.payment {
-  background: #EEEEEE;
-
-  &::before {
-    background: #555555;
-  }
-}
-
-.margin-left {
-  margin-left: 20px;
-}
-
-.margin-right {
-  margin-right: 20px;
 }

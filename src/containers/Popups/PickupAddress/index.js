@@ -13,7 +13,7 @@ const SHOPS = [
   {id: 3, value: 'AVS3', label: 'AVS3'},
 ];
 
-function PopupPickupAddress() {
+const PopupPickupAddress = () => {
   const dispatch = useDispatch();
   const pickUpData = useSelector((state) => getPickUpData(state));
 
@@ -30,18 +30,18 @@ function PopupPickupAddress() {
       <Form>
         <Popup
           title='Edit shipping address'
+          width='654px'
           firstButton={
-            <Button marginRight handler={() => dispatch(ActionCreator.closePopup())}>
+            <Button marginRight='20px' handler={() => dispatch(ActionCreator.closePopup())}>
               Cancel
             </Button>
           }
           secondButton={
-            <Button fill type='submit'>
+            <Button fill type='submit' handler={()=>{}}>
               Save
             </Button>
           }
-          closeBtnHandler={() => dispatch(ActionCreator.closePopup())}
-          width={654}>
+          closeBtnHandler={() => dispatch(ActionCreator.closePopup())}>
           <div className='popup__content'>
             <Field name='shop' component={SelectComponent} labelText='Select shop' options={SHOPS} width />
           </div>
@@ -49,6 +49,6 @@ function PopupPickupAddress() {
       </Form>
     </Formik>
   );
-}
+};
 
 export default PopupPickupAddress;

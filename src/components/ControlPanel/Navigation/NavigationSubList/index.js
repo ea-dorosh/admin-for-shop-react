@@ -1,8 +1,11 @@
 import React from 'react';
 import './index.scss';
+import PropTypes from 'prop-types';
 
-function NavigationSubList({children}) {
-  return <ul className={'navigation-sub-list'}>{children}</ul>;
-}
+const NavigationSubList = ({children}) => <ul className='navigation-sub-list'>{children}</ul>;
+
+NavigationSubList.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default NavigationSubList;

@@ -1,8 +1,11 @@
 import React from 'react';
 import './index.scss';
+import PropTypes from 'prop-types';
 
-function Header(props) {
-  return <header className={'header'}>{props.children}</header>;
-}
+const Header = ({children}) => <header className='header'>{children}</header>;
 
 export default Header;
+
+Header.propTypes = {
+  children: PropTypes.node.isRequired,
+};

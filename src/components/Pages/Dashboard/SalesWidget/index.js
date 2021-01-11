@@ -1,15 +1,19 @@
 import React from 'react';
 import './index.scss';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
-function SalesWidget(props) {
-  const {name, amount, total} = props;
+const SalesWidget = ({name, amount, total}) => (
+  <div className={classNames('sales-widget', {'sales-widget--total': total})}>
+    <span className='sales-widget__company-name'>{name}</span>
+    <span className='sales-widget__company-amount'>{amount}</span>
+  </div>
+);
 
-  return (
-    <div className={`sales-widget ${total ? `sales-widget--total` : null}`}>
-      <span className='sales-widget__company-name'>{!total ? name : 'Total'}</span>
-      <span className='sales-widget__company-amount'>${amount}</span>
-    </div>
-  );
-}
+SalesWidget.propTypes = {
+  name: PropTypes.string.isRequired,
+  amount: PropTypes.number.isRequired,
+  total: PropTypes.bool,
+};
 
 export default SalesWidget;

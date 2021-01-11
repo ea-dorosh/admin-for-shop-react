@@ -25,14 +25,22 @@
     top: 4px;
   }
 
-  &--back {
-    &::before {
-      width: 7px;
-      height: 7px;
-      border-top: 1px solid #555555;
-      border-right: 1px solid #555555;
-      transform: rotate(-135deg);
-    }
+  .arrow-icon {
+    position: absolute;
+    left: 0;
+    top: -1px;
+  }
+
+  .printer-icon {
+    position: absolute;
+    left: 0;
+    top: -1px;
+  }
+
+  .refund-icon {
+    position: absolute;
+    left: 0;
+    top: -1px;
   }
 }
 
@@ -61,6 +69,14 @@
   font-size: 12px;
   line-height: 18px;
   color: #333333;
+}
+
+.order-header__label-payment {
+  margin-right: 20px;
+}
+
+.order-header__label-refund {
+  margin-left: 20px;
 }
 
 .order-header__link-wrapper {

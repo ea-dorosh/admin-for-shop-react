@@ -9,16 +9,17 @@ import Table from 'components/ControlPanel/Table';
 import TableHead from 'components/ControlPanel/Table/TableHead';
 import TableData from 'components/ControlPanel/Table/TableData';
 import TableRow from 'components/ControlPanel/Table/TableRow';
-import TitleH1 from 'components/Titles/H1';
+import TitleH1 from 'components/Titles/TitleH1';
 import MainContent from 'components/ControlPanel/Main/MainContent';
 
-function Dashboard() {
+const Dashboard = () => {
   const shops = useSelector((state) => state.shops.shops);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(Operation.fetchShops());
-  }, [dispatch]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const calculateTotal = function () {
     let totalAmount = 0;
@@ -33,13 +34,13 @@ function Dashboard() {
   return (
     <Main>
       <MainHeader>
-        <TitleH1 title={'Dashboard'} />
+        <TitleH1 title='Dashboard' />
       </MainHeader>
       <MainContent>
         <div className='dashboard-page__wrapper main-content__wrapper'>
           <h3 className='dashboard-page__title'>Daily Sales</h3>
           <div className='dashboard-page__sales'>
-            <SalesWidget total amount={calculateTotal()} />
+            <SalesWidget total name='Total' amount={calculateTotal()} />
             {shops.map((shop, index) => (
               <SalesWidget name={shop.shop.name} amount={shop.dailySales[0].amount} key={index} />
             ))}
@@ -72,6 +73,6 @@ function Dashboard() {
       </MainContent>
     </Main>
   );
-}
+};
 
 export default Dashboard;

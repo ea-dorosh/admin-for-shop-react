@@ -6,7 +6,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {ActionCreator} from 'actions/popups';
 import {getBillingAddress, getShippingAddress, getOrder, getPickUpData} from 'reducer/orders/selector';
 
-function PageInfo() {
+const PageInfo = () => {
   const order = useSelector((state) => getOrder(state));
   const billingAddress = useSelector((state) => getBillingAddress(state));
   const shippingAddress = useSelector((state) => getShippingAddress(state));
@@ -103,6 +103,6 @@ function PageInfo() {
       )}
     </div>
   );
-}
+};
 
 export default PageInfo;

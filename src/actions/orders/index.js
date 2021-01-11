@@ -44,7 +44,7 @@ const Operation = {
     dispatch(ActionCreator.fetchOrders(json));
   },
   fetchOrderInfo: () => async (dispatch) => {
-    const response = await fetch(orderInfoUrl.offlineFulfilled);
+    const response = await fetch(orderInfoUrl.onlinePaid);
     const json = await response.json();
     dispatch(ActionCreator.fetchOrder(json));
   },

@@ -11,7 +11,7 @@ import {ActionCreator} from 'actions/popups';
 import {useSelector, useDispatch} from 'react-redux';
 import {calculateProductAmount} from 'utils/utils';
 
-function OrderDetails() {
+const OrderDetails = () => {
   const order = useSelector((state) => state.orders.orderInfo);
   const dispatch = useDispatch();
 
@@ -48,10 +48,12 @@ function OrderDetails() {
         <div className='order-fulfillment__bottom-wrapper'>
           {order.deliveryInfo && order.deliveryInfo.shipping.status ? (
             <>
-              <Button marginRight handler={() => dispatch(ActionCreator.showPopup('PopupFulfillment'))}>
+              <Button marginRight='20px' handler={() => dispatch(ActionCreator.showPopup('PopupFulfillment'))}>
                 Mark as fulfilled
               </Button>
-              <Button fill>Create shipping label</Button>
+              <Button fill handler={() => {}}>
+                Create shipping label
+              </Button>
             </>
           ) : (
             <Button handler={() => dispatch(ActionCreator.showPopup('PopupFulfillment'))} fill>
@@ -62,6 +64,6 @@ function OrderDetails() {
       )}
     </div>
   );
-}
+};
 
 export default OrderDetails;

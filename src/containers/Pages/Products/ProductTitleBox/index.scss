@@ -1,0 +1,28 @@
+.product-title-box {
+  display: flex;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+}
+
+.product-title-box__wrapper {
+  margin-left: 10px;
+  padding-top: 5px;
+}
+
+.product-title-box__title {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: #333333;
+}
+
+.product-title-box__text {
+  margin-top: 3px;
+  font-size: 14px;
+  line-height: 16px;
+  color: #555555;
+
+  span {
+    margin-right: 20px;
+  }
+}

@@ -1,8 +1,11 @@
 import React from 'react';
 import './index.scss';
+import PropTypes from 'prop-types';
 
-const Tab = (props) => {
-  return <div className='tab'>{props.children}</div>;
+const Tab = ({children}) => <div className='tab'>{children}</div>;
+
+Tab.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default Tab;

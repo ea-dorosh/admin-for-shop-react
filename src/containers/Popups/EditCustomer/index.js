@@ -8,7 +8,7 @@ import InputText from 'components/Form/InputText';
 import {getCustomer} from 'reducer/orders/selector';
 import {Field, Form, Formik} from 'formik';
 
-function PopupEditCustomer() {
+const PopupEditCustomer = () => {
   const dispatch = useDispatch();
   const customer = useSelector((state) => getCustomer(state));
 
@@ -26,12 +26,12 @@ function PopupEditCustomer() {
         <Popup
           title='Edit Customer'
           firstButton={
-            <Button marginRight handler={() => dispatch(ActionCreator.closePopup())}>
+            <Button marginRight='20px' handler={() => dispatch(ActionCreator.closePopup())}>
               Cancel
             </Button>
           }
           secondButton={
-            <Button fill type='submit'>
+            <Button fill type='submit' handler={()=>{}}>
               Save
             </Button>
           }
@@ -48,6 +48,6 @@ function PopupEditCustomer() {
       </Form>
     </Formik>
   );
-}
+};
 
 export default PopupEditCustomer;

@@ -7,16 +7,20 @@ import TableData from 'components/ControlPanel/Table/TableData';
 import {useSelector} from 'react-redux';
 import StatusLabel from 'components/ControlPanel/UI/StatusLabel';
 
-function OrderPayment() {
+const OrderPayment = () => {
   const order = useSelector((state) => state.orders.orderInfo);
 
   return (
     <div className='order-payment'>
       <div className='order-payment__top-wrapper'>
         <StatusIcon payment>Paid</StatusIcon>
-        {order.shop.type === 'offline' && <StatusLabel addClass={'margin-left'}>{order.payment.type}</StatusLabel>}
+        {order.shop.type === 'offline' && (
+          <div className='order-payment__label-payment'>
+            <StatusLabel>{order.payment.type}</StatusLabel>
+          </div>
+        )}
       </div>
-      <Table tableType={'order-payment'}>
+      <Table tableType='order-payment'>
         <tbody>
           <TableRow>
             <TableData>Subtotal</TableData>
@@ -29,7 +33,7 @@ function OrderPayment() {
               <TableData>-${order.payment.discount}</TableData>
             </TableRow>
           )}
-          {order.shop.type === 'online' && (
+          {order.shop.type === 'online' && order.deliveryInfo.shipping.company && (
             <TableRow>
               <TableData>Shipping</TableData>
               <TableData>
@@ -58,6 +62,6 @@ function OrderPayment() {
       </Table>
     </div>
   );
-}
+};
 
 export default OrderPayment;

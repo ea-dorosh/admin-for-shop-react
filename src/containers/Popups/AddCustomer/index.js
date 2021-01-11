@@ -8,7 +8,7 @@ import PopupForm from 'components/ControlPanel/Popup/PopupForm';
 import InputText from 'components/Form/InputText';
 import {Field, Form, Formik} from 'formik';
 
-function PopupAddCustomer() {
+const PopupAddCustomer = () => {
   const dispatch = useDispatch();
   const initialValues = {
     firstName: '',
@@ -28,12 +28,12 @@ function PopupAddCustomer() {
         <Popup
           title='Add Customer'
           firstButton={
-            <Button marginRight handler={() => dispatch(ActionCreator.closePopup())}>
+            <Button marginRight='20px' handler={() => dispatch(ActionCreator.closePopup())}>
               Cancel
             </Button>
           }
           secondButton={
-            <Button fill type='submit'>
+            <Button fill type='submit' handler={() => {}}>
               Save
             </Button>
           }
@@ -50,6 +50,6 @@ function PopupAddCustomer() {
       </Form>
     </Formik>
   );
-}
+};
 
 export default PopupAddCustomer;

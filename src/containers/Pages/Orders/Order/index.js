@@ -11,8 +11,11 @@ import PageInfo from 'containers/Pages/Orders/Order/PageInfo';
 import OrderDetails from 'containers/Pages/Orders/Order/OrderDetails';
 import OrderPayment from 'containers/Pages/Orders/Order/OrderPayment';
 import OrderRefund from 'containers/Pages/Orders/Order/OrderRefund';
+import iconPrinter from 'images/print.svg';
+import iconRefund from 'images/refund.svg';
+import iconArrow from 'images/arrow-back.svg';
 
-function Order() {
+const Order = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const order = useSelector((state) => state.orders.orderInfo);
@@ -29,27 +32,29 @@ function Order() {
             type='button'
             className='order-header__link order-header__link--back'
             onClick={() => history.goBack()}>
-            All Orders
+            <img src={iconArrow} alt='arrow back icon' className='arrow-icon' /> All Orders
           </button>
           <div className='order-header__wrapper'>
             <span className='order-header__title'>{order.checkout}</span>
             <span className='order-header__date'>
               {order.date} from {order.shop.name}
             </span>
-            <StatusLabel addClass={'margin-right'}>Paid</StatusLabel>
+            <div className='order-header__label-payment'>
+              <StatusLabel>Paid</StatusLabel>
+            </div>
             <StatusLabel fulfillment={order.fulfillment}>{order.fulfillment.name}</StatusLabel>
             {order.refund.id !== 0 && (
-              <StatusLabel refunding={order.refund} addClass={'margin-left'}>
-                {order.refund.name}
-              </StatusLabel>
+              <div className='order-header__label-refund'>
+                <StatusLabel refunding={order.refund}>{order.refund.name}</StatusLabel>
+              </div>
             )}
           </div>
           <div className='order-header__link-wrapper'>
             <button type='button' className='order-header__link'>
-              Print
+              <img src={iconPrinter} alt='printer icon' className='printer-icon' /> Print
             </button>
             <button type='button' className='order-header__link'>
-              Refund
+              <img src={iconRefund} alt='refund icon' className='refund-icon' /> Refund
             </button>
           </div>
         </MainHeader>
@@ -75,6 +80,6 @@ function Order() {
       </Main>
     )
   );
-}
+};
 
 export default Order;

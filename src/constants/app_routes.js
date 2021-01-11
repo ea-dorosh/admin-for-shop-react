@@ -3,11 +3,18 @@ export const AppRoutes = {
   ORDERS: {
     ORDERS: '/orders',
     ALL_ORDERS: '/orders/all-orders',
+    order(id) {
+      return `/orders/${id}`;
+    },
+  },
+  PRODUCTS: {
+    PRODUCTS: '/products',
+    INVENTORY: '/products/inventory',
+    TRANSFERS: '/products/transfers',
+    DISCOUNTS: '/products/discounts',
   },
   CUSTOMERS: {
-    ALL_CUSTOMERS: '/all-customers',
-  },
-  order(id) {
-    return `/orders/all-orders/${id}`;
+    CUSTOMERS: '/customers',
+    ALL_CUSTOMERS: '/customers/all-customers',
   },
 };

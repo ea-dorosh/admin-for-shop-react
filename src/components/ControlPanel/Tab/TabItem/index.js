@@ -1,14 +1,15 @@
 import React from 'react';
 import './index.scss';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import {useDispatch} from 'react-redux';
 
-const TabItem = (props) => {
-  const {title, isActive, filterHandle} = props;
+const TabItem = ({title, isActive, filterHandle}) => {
   const dispatch = useDispatch();
 
   return (
     <div
-      className={`tab__item${isActive ? ` active` : ''}`}
+      className={classNames('tab__item', {active: isActive})}
       onClick={() => {
         dispatch(filterHandle(title));
       }}>
@@ -18,3 +19,9 @@ const TabItem = (props) => {
 };
 
 export default TabItem;
+
+TabItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  isActive: PropTypes.bool.isRequired,
+  filterHandle: PropTypes.func.isRequired,
+};

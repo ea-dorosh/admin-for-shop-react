@@ -8,7 +8,7 @@ import PopupForm from 'components/ControlPanel/Popup/PopupForm';
 import {getPickUpData} from 'reducer/orders/selector';
 import {Field, Form, Formik} from 'formik';
 
-function PopupTimeOfIssue() {
+const PopupTimeOfIssue = () => {
   const dispatch = useDispatch();
   const pickUpData = useSelector((state) => getPickUpData(state));
 
@@ -25,8 +25,9 @@ function PopupTimeOfIssue() {
       <Form>
         <Popup
           title='Time of issue'
+          width='654px'
           firstButton={
-            <Button marginRight handler={() => dispatch(ActionCreator.closePopup())}>
+            <Button marginRight='20px' handler={() => dispatch(ActionCreator.closePopup())}>
               Cancel
             </Button>
           }
@@ -35,8 +36,7 @@ function PopupTimeOfIssue() {
               Save
             </Button>
           }
-          closeBtnHandler={() => dispatch(ActionCreator.closePopup())}
-          width={654}>
+          closeBtnHandler={() => dispatch(ActionCreator.closePopup())}>
           <div className='popup__content'>
             <PopupForm>
               <Field name='date' component={InputText} labelText='Date' />
@@ -47,6 +47,6 @@ function PopupTimeOfIssue() {
       </Form>
     </Formik>
   );
-}
+};
 
 export default PopupTimeOfIssue;

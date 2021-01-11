@@ -1,8 +1,11 @@
 import React from 'react';
 import './index.scss';
+import PropTypes from 'prop-types';
 
-function PopupForm(props) {
-  return <div className='popup-form'>{props.children}</div>;
-}
+const PopupForm = ({children}) => <div className='popup-form'>{children}</div>;
+
+PopupForm.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default PopupForm;

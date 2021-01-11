@@ -1,0 +1,16 @@
+.marker-icon {
+  display: block;
+  margin-right: 3px;
+  margin-bottom: 3px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+
+  &--refund {
+    background-color: #F84444;
+  }
+
+  &--transfer {
+    background-color: #2776FF;
+  }
+}

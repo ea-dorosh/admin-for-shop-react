@@ -1,0 +1,45 @@
+.notification-form {
+
+}
+
+.notification-form__top-wrapper {
+  display: flex;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.notification-form__info-wrapper {
+  width: 50%;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #333333;
+}
+
+.notification-form__info {
+  margin-bottom: 10px;
+
+  &--bold {
+    margin-left: 6px;
+    font-weight: 500;
+  }
+}
+
+.notification-form__checkboxes {
+  display: flex;
+  flex-direction: column;
+}
+
+.notification-form__checkbox {
+  margin-bottom: 10px;
+}
+
+.notification-form__bottom-wrapper {
+  padding-top: 30px;
+}
+
+.notification-form__field-wrapper {
+  margin-bottom: 20px;
+}
